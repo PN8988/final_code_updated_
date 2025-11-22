@@ -1,0 +1,579 @@
+/* 
+.client-menu-container {
+  padding: 24px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 900px;
+  margin: auto;
+  background-color: #f9f9f9;
+}
+
+
+.client-form {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 30px;
+  background-color: #fff;
+}
+
+.search-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.search-section label {
+  font-weight: 600;
+}
+
+.search-section input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 200px;
+}
+
+
+.form-fields {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.form-fields div {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-fields label {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.form-fields input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+
+.investment-section {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #fff;
+  margin-bottom: 30px;
+}
+
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section-header h2 {
+  margin: 0;
+}
+
+.edit-btn {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.edit-btn:hover {
+  background-color: #0056b3;
+}
+
+
+.tabs {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.tab {
+  padding: 10px 20px;
+  border: none;
+  background-color: #e0e0e0;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.tab.active {
+  background-color: #007bff;
+  color: white;
+}
+
+.tab-content {
+  margin-top: 15px;
+  padding: 12px;
+  background-color: #f2f2f2;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+
+.asset-listing {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.asset-listing h2 {
+  margin-bottom: 16px;
+}
+
+.asset-listing table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+
+.asset-listing th,
+.asset-listing td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+.asset-listing th {
+  background-color: #f0f0f0;
+  font-weight: 600;
+}
+.sub-tabs {
+  margin-top: 10px;
+}
+.sub-tabs button {
+  margin-right: 10px;
+  padding: 5px 10px;
+}
+.active-subtab {
+  background-color: #1976d2;
+  color: white;
+  border-radius: 4px;
+} */
+
+
+/* ClientMenuForm.css */
+
+/* Container */
+.client-menu-container {
+  padding: 24px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 800px;
+  margin: auto;
+  background-color: #f9f9f9;
+}
+/* Search Section */
+.search-section {
+  display: flex;
+  justify-content:left; /* centers horizontally */
+  align-items:flex-end;
+  gap: 10px;
+  margin: 10px;
+  width: 50%;
+}
+
+
+.search-section input {
+  flex: 1;
+  padding: 4px;
+}
+
+.btn-search {
+  padding: 8px 16px;
+  background-color: #d23e19;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-search:hover {
+  background-color: #125aa3;
+}
+
+/* Client Form Fields */
+.client-form {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 30px;
+  background-color: #fff;
+ 
+}
+
+.form-fields {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.form-fields div {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-fields label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-fields input {
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+}
+
+/* Investment Section */
+.investment-section {
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  background-color: #f4f7fb;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.edit-btn {
+  padding: 6px 14px;
+  background-color: #da7e16;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.edit-btn:hover {
+  background-color: #125aa3;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.tab {
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  background-color: #eeeeee;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.tab.active {
+  background-color: #1976d2;
+  color: white;
+  font-weight: bold;
+}
+
+/* Subtabs */
+.sub-tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.subtab {
+  padding: 6px 12px;
+  font-size: 13px;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.subtab:hover {
+  background-color: #ddd;
+}
+
+.active-subtab {
+  background-color: #1976d2;
+  color: white;
+  border: none;
+}
+
+/* Tab Content */
+.tab-content {
+  padding: 10px 0;
+  font-size: 15px;
+  color: #333;
+}
+
+/* Asset Table */
+.asset-listing {
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #fafafa;
+}
+
+.asset-listing table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.asset-listing th,
+.asset-listing td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+  color: #140c0c;
+}
+
+.asset-listing th {
+  background-color: #f0f0f0;
+  font-weight: bold;
+}
+.btn-edit {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.btn-delete {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.asset-listing button {
+  padding: 4px 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+}
+.asset-listing .btn-delete {
+  background-color: red;
+  color: white;
+}
+.asset-listing h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+/* Container */
+.client-menu-container {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+/* Tabs Styling */
+.tabs {
+  display: flex;
+  flex-direction: column; /* cascade effect (vertical alignment) */
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.tab-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main Tabs */
+.tab {
+  background: #f5f5f5;
+  border: 2px solid #ccc;
+  padding: 5px 10px;
+  text-align: left;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 6px;
+}
+
+.tab:hover {
+  background: #e6f0ff;
+}
+
+.tab.active {
+  background: #007bff;
+  color: #fff;
+  border-color: #0056b3;
+}
+
+/* Sub Tabs (cascaded inside main) */
+.sub-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-left: 20px; /* cascade indentation */
+  margin-top: 8px;
+}
+
+.subtab {
+  background: #f9f9f9;
+  border: 1px solid #bbb;
+  padding: 6px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.subtab:hover {
+  background: #dceeff;
+}
+
+.subtab.active-subtab {
+  background: #28a745;
+  color: #fff;
+  border-color: #1e7e34;
+}
+
+/* Filters */
+.filters {
+  margin: 15px 0;
+  display: flex;
+  gap: 10px;
+}
+
+.filters input {
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Table */
+.asset-listing table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.asset-listing th, .asset-listing td {
+  border: 1px solid #ccc;
+  padding: 8px 10px;
+  text-align: left;
+}
+
+.asset-listing th {
+  background: #f0f0f0;
+}
+
+.asset-listing tr:nth-child(even) {
+  background: #fafafa;
+}
+
+/* Buttons */
+.btn-delete {
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-delete:disabled {
+  background: #aaa;
+  cursor: not-allowed;
+}
+/* Main Tabs */
+.tab {
+  width: 250px;              /* fixed width (you can change to 200px, 300px, etc.) */
+  background: #f5f5f5;
+  border: 2px solid #ccc;
+  padding: 10px 15px;
+  text-align: left;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 6px;
+}
+
+.tab.active {
+  background: #007bff;
+  color: #fff;
+  border-color: #0056b3;
+}
+
+/* Sub Tabs */
+.subtab {
+  width: 200px;              /* slightly smaller width for subtabs */
+  background: #f9f9f9;
+  border: 1px solid #bbb;
+  padding: 6px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.subtab.active-subtab {
+  background: #28a745;
+  color: #fff;
+  border-color: #1e7e34;
+}
+.cascade-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tab-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.tab {
+  background: #dbe0e2;
+  color:black;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  text-align: left;
+  cursor: pointer;
+  font-weight: bold;
+  width: 250px; /* control width */
+}
+
+.tab.active {
+  background: #e2e7e9;
+}
+
+.cascade-subtabs {
+  margin-left: 20px;
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.subtab {
+  background: #eaeaea;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 220px;
+  text-align: left;
+}
+
+.subtab.active-subtab {
+  background: #cce5ff;
+  font-weight: bold;
+}

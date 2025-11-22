@@ -1,0 +1,62 @@
+/* Container */
+.tax-calendar-container {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background: #fafafa;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  font-family: "Segoe UI", Arial, sans-serif;
+  margin-top: 80px;
+}
+
+/* Heading */
+.tax-calendar-container h3 {
+  text-align: center;
+  color: #2c3e50;
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+}
+
+/* Labels */
+.tax-calendar-container label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 6px;
+  color: #34495e;
+}
+
+/* Input & Dropdowns */
+.tax-calendar-container input,
+.tax-calendar-container select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  font-size: 1rem;
+  transition: border 0.2s ease-in-out, box-shadow 0.2s;
+}
+
+.tax-calendar-container input:focus,
+.tax-calendar-container select:focus {
+  border-color: #3498db;
+  outline: none;
+  box-shadow: 0 0 6px rgba(52, 152, 219, 0.4);
+}
+
+/* Option style */
+.tax-calendar-container select option {
+  padding: 8px;
+}
+
+/* Selected info */
+.selected-value {
+  margin-top: 12px;
+  padding: 10px;
+  border-radius: 8px;
+  background: #ecf0f1;
+  font-size: 0.95rem;
+  color: #2c3e50;
+}

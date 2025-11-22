@@ -1,0 +1,32 @@
+.sale-form-container {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  border-radius: 8px;
+  box-shadow: 0 0 8px #ccc;
+}
+
+.sale-form-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-row1 {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-row1 label {
+  font-size: 12px;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.form-row1 input {
+  padding: 8px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid #aaa;
+}

@@ -1,0 +1,237 @@
+/* BankForm.css */
+
+.bank-form-container {
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+  background-color: #f7f7f7;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.bank-form {
+  background-color: #fff;
+  padding: 30px 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 800px;
+}
+
+.bank-form h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 25px;
+  font-size: 24px;
+}
+
+.bank-form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* spacing between inputs */
+  margin-bottom: 20px;
+}
+
+.bank-form-group {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.bank-form-group label {
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #555;
+}
+
+.bank-form-group input,
+.bank-form-group select {
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.bank-form-group input:focus,
+.bank-form-group select:focus {
+  border-color: #007bff;
+}
+
+.btn-submit {
+  background-color: #007bff;
+  color: #fff;
+  /* padding: 12px 20px; */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  height: 40px;
+  width: 100px;
+  gap: 10px;
+  transition: background-color 0.3s;
+}
+
+.btn-submit:hover {
+  background-color: #0056b3;
+}
+
+.bank-form-group p {
+  font-size: 13px;
+  color: #333;
+  margin-top: 5px;
+}
+
+/* Mobile view */
+@media (max-width: 600px) {
+  .bank-form-row {
+    flex-direction: column;
+  }
+}
+/* Row for refund and nominee */
+.bank-form-row.refund-nominee {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+/* Each group */
+.bank-form-group.refund,
+.bank-form-group.nominee {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Label */
+.bank-form-group.refund label,
+.bank-form-group.nominee label {
+  font-weight: 500;
+  color: #555;
+  margin-right: 10px;
+}
+
+/* Yes/No radio buttons */
+.yes-no-group {
+  display: flex;
+  gap: 15px;
+}
+
+.yes-no-group label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  color: #333;
+}
+
+.yes-no-group input[type="radio"] {
+  accent-color: #007bff; /* modern browsers */
+  cursor: pointer;
+}
+/* Container row for Refund and Nominee */
+.bank-form-row.refund-nominee {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+/* Each field group */
+.bank-form-group.refund,
+.bank-form-group.nominee {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Label */
+.bank-form-group.refund label,
+.bank-form-group.nominee label {
+  font-weight: 500;
+  color: #555;
+  min-width: 80px;
+}
+
+/* Toggle buttons group */
+.toggle-group {
+  display: flex;
+  gap: 10px;
+}
+
+/* Individual toggle button */
+.toggle-btn {
+  padding: 6px 18px;
+  border-radius: 6px;
+  border: 1px solid #007bff;
+  background: #fff;
+  color: #007bff;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease-in-out;
+}
+
+.toggle-btn:hover {
+  background: #007bff;
+  color: #fff;
+}
+
+/* Active button */
+.toggle-btn.active {
+  background: #007bff;
+  color: #fff;
+}
+.suggestions-list {
+  position: absolute;
+  background: white;
+  border: 1px solid #ddd;
+  width: 100%;
+  max-height: 150px;
+  overflow-y: auto;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  z-index: 1000;
+}
+
+.suggestions-list li {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.suggestions-list li:hover {
+  background: #f0f0f0;
+}
+.btn-display{
+  background-color: rgb(157, 168, 127);
+  color: white;
+
+  width: 100px;
+  height: 40px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.buttons-groups{
+  width: 150px;
+  height: 40px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: right;
+  gap: 10px;
+}

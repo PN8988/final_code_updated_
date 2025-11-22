@@ -1,0 +1,70 @@
+/* Container */
+.security-list {
+  max-width: 90%;
+  margin: 20px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  margin-left: 230px;
+  margin-top: 50px;
+}
+
+/* Title */
+.security-list-title {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Empty state */
+.no-securities {
+  text-align: center;
+  color: #888;
+  font-style: italic;
+}
+
+/* Table */
+.security-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  background: #fafafa;
+}
+
+.security-table th,
+.security-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.security-table th {
+  background-color: #004d99;
+  color: white;
+  font-weight: bold;
+}
+
+.security-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.security-table tr:hover {
+  background-color: #e6f2ff;
+}
+
+/* Buttons */
+.security-master-delete-btn {
+  background-color: #e63946;
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: background 0.3s ease;
+}
+
+.security-master-delete-btn:hover {
+  background-color: #b71c1c;
+}

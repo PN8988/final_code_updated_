@@ -1,0 +1,36 @@
+.services-page {
+  font-family: "Poppins", sans-serif;
+}
+
+.service-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 15px;
+  background-color: #ffffff;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.service-icon {
+  font-size: 3rem;
+  color: #198754; /* Bootstrap green */
+}
+
+.service-detail-section {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.service-detail-section h3 {
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.service-detail-section p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #555;
+}

@@ -1,0 +1,132 @@
+/* src/components/EmployerDashBoard.css */
+
+.modern-dashboard-bg {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e3f2fd, #ede7f6, #f3e5f5);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 50px 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+.modern-dashboard-container {
+  width: 100%;
+  max-width: 1200px;
+}
+
+.modern-header {
+  text-align: center;
+  margin-bottom: 40px;
+  animation: fadeInDown 1s ease;
+}
+
+.modern-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2b2d42;
+  margin-bottom: 10px;
+}
+
+.modern-subtitle {
+  color: #555;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.modern-tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.modern-tab-btn {
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: none;
+  background: #e0e0e0;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.modern-tab-btn:hover {
+  background: #673ab7;
+  color: white;
+}
+
+.modern-tab-btn.active {
+  background: linear-gradient(90deg, #5e35b1, #7e57c2);
+  color: white;
+  box-shadow: 0 4px 10px rgba(103, 58, 183, 0.3);
+}
+
+.modern-task-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  animation: fadeIn 1.2s ease;
+}
+
+.modern-task-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 16px !important;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.modern-task-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.modern-task-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #311b92;
+  margin-bottom: 10px;
+}
+
+.modern-subtask-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.modern-subtask-link {
+  font-size: 0.95rem;
+  padding: 6px 0;
+  color: #424242;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.modern-subtask-link:hover {
+  color: #5e35b1;
+  transform: translateX(6px);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

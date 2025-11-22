@@ -1,0 +1,55 @@
+.page-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+  background-color: #f3f4f6;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.sale-form-container {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 800px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.sale-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.sale-table th,
+.sale-table td {
+  padding: 12px;
+  border: 1px solid #e2e8f0;
+  text-align: left;
+}
+
+.sale-table input {
+  width: 100%;
+  padding: 6px;
+  border: 1px solid #cbd5e1;
+  border-radius: 5px;
+}
+
+.readonly input {
+  background-color: #f1f5f9;
+}
+
+.save-btn {
+  margin-top: 20px;
+  background-color: #165f1f;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.btn1-search{
+  background-color: aqua;
+  color: white;
+}

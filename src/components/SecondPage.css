@@ -1,0 +1,178 @@
+/* Container and general styling - unchanged */
+.second-form-container {
+  height: 90vh;
+  background-color: #f9f9f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.second-form-wrapper {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 40px auto;
+  background-color: #ffffff;
+  padding: 3rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 900px;
+  margin-top: 120px;
+}
+
+.second-form-heading {
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.add-button {
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  float: right;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease;
+  width: 7rem;
+}
+
+.add-button:hover {
+  background-color: #0056b3;
+}
+
+.sub-property-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  table-layout: fixed;
+  border: 1px solid #ccc;
+}
+
+.sub-property-table th,
+.sub-property-table td {
+  border: 1px solid #dee2e6;
+  padding: 7px 10px;
+  text-align: center;
+  vertical-align: middle;
+  word-wrap: break-word;
+}
+
+.sub-property-table th {
+  background-color: #aca8a8;
+  font-weight: 600;
+  text-align: center;
+  gap: 10px;
+}
+
+.sub-property-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.sub-property-table tr:hover {
+  background-color: #e9ecef;
+}
+
+.sub-property-table input[type='text'],
+.sub-property-table select {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+}
+
+/* Checkbox Styling */
+.sub-property-table input[type='checkbox'] {
+  transform: scale(1.2);
+  margin-right: 4px;
+}
+
+/* Buttons inside the Actions column only */
+.sub-property-table td:nth-child(5) .btn-group {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+.sub-property-table td:nth-child(5) .save-btn,
+.sub-property-table td:nth-child(5) .edit-btn,
+.sub-property-table td:nth-child(5) .update-btn,
+.sub-property-table td:nth-child(5) .remove-btn-1 {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 13px;
+  transition: background-color 0.3s ease;
+  min-width: 60px;
+  white-space: nowrap;
+}
+
+/* Individual button colors */
+.sub-property-table td:nth-child(5) .save-btn {
+  background-color: #28a745;
+}
+.sub-property-table td:nth-child(5) .save-btn:hover {
+  background-color: #218838;
+}
+
+.sub-property-table td:nth-child(5) .edit-btn {
+  background-color: #e75959;
+  color: #212529;
+}
+.sub-property-table td:nth-child(5) .edit-btn:hover {
+  background-color: #e0a800;
+}
+
+.sub-property-table td:nth-child(5) .update-btn {
+  background-color: #17a2b8;
+  padding: 6px 12px;
+}
+.sub-property-table td:nth-child(5) .update-btn:hover {
+  background-color: #138496;
+}
+
+.sub-property-table td:nth-child(5) .remove-btn-1 {
+  background-color: darkred;
+}
+.sub-property-table td:nth-child(5) .remove-btn-1:hover {
+  background-color: #a00b0b;
+}
+
+/* Other buttons on page unaffected */
+
+/* Back and next buttons */
+.btn-back {
+  background-color: rgb(174, 202, 16);
+  color: white;
+  padding: 7px 14px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.btn-next {
+  background-color: rgb(46, 20, 216);
+  color: white;
+  padding: 7px 14px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+.remove-btn-1{
+  background-color: #a00b0b;
+  color: #ccc;
+  padding: 7px 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}

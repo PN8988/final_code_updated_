@@ -1,0 +1,460 @@
+.client-container {
+  display: flex;
+  min-height: 100vh;
+  width: 900px;
+  font-family: Arial, sans-serif;
+  background-color: #f5f6fa;
+  margin-top: 50px;
+}
+
+.loading {
+  font-size: 16px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background: #fff;
+  border-right: 1px solid #ddd;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  overflow-y: auto;
+}
+
+.sidebar-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #111827;
+}
+
+.sidebar-nav .nav-btn {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 5px;
+  background: none;
+  border: none;
+  color: #374151;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s;
+  border-radius: 6px;
+}
+
+.sidebar-nav .nav-btn svg {
+  margin-right: 10px;
+}
+
+.sidebar-nav .nav-btn:hover,
+.sidebar-nav .nav-btn.active {
+  background-color: #dbeafe;
+  color: #1d4ed8;
+  font-weight: 600;
+}
+
+/* Main content */
+.main-content {
+  flex: 1;
+  margin-left: 250px;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* Card */
+.card-container{
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* Profile grid */
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 10px;
+}
+
+.profile-grid p {
+  background-color: #f9fafb;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.profile-grid p span {
+  font-weight: bold;
+  color: #374151;
+}
+
+/* Table */
+.drl-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  text-align: left;
+  padding: 10px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+.table th {
+  background-color: #f3f4f6;
+}
+
+/* Subtabs */
+.subtabs {
+  display: flex;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.subtab-btn {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  background-color: #f5f6fa;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.subtab-btn.active {
+  background-color: #00a8ff;
+  color: #fff;
+  border-color: #00a8ff;
+}
+.upload-instructions {
+  background: #f9f9f9;
+  border-left: 5px solid #4caf50;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+}
+
+.upload-instructions h4 {
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #333;
+}
+
+.upload-instructions ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.upload-instructions li {
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #555;
+}
+/* ✅ Welcome Banner */
+.welcome-banner {
+  background: #f0f6ff;
+  color: #004080;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  padding: 12px;
+  margin: 10px 0 20px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-banner .highlight {
+  color: #0066cc;
+  font-weight: 700;
+}
+
+/* ✅ Layout */
+.client-container {
+  display: flex;
+  height: 100vh;
+  background: #f9f9f9;
+  font-family: Arial, sans-serif;
+}
+
+.sidebar {
+  width: 240px;
+  /* background: #1e293b; */
+  color: #fff;
+  padding: 20px;
+}
+
+.sidebar-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px;
+  border: none;
+  background: transparent;
+  color: #cbd5e1;
+  font-size: 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.nav-btn:hover {
+  background: #334155;
+  color: #fff;
+}
+
+.nav-btn.active {
+  background: #2563eb;
+  color: #fff;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* ✅ Cards */
+.card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #1e293b;
+}
+
+/* ✅ Profile Grid */
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 10px;
+}
+
+.profile-grid span {
+  font-weight: bold;
+  color: #334155;
+}
+
+/* ✅ Tables */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.table th,
+.table td {
+  border: 1px solid #e2e8f0;
+  padding: 8px 10px;
+  text-align: left;
+}
+
+.table th {
+  background: #f1f5f9;
+  font-weight: 600;
+}
+
+/* ✅ DRL Table */
+.drl-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.drl-table th,
+.drl-table td {
+  border: 1px solid #bfc7cf;
+  padding: 10px;
+  text-align: left;
+}
+
+.drl-table th {
+  background: #c5c8cc;
+  font-weight: 600;
+}
+
+/* ✅ Upload Instructions */
+.upload-instructions {
+  background: #fef9c3;
+  border-left: 5px solid #facc15;
+  padding: 15px;
+  margin-top: 20px;
+  border-radius: 6px;
+}
+
+.upload-instructions h4 {
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #92400e;
+}
+
+.upload-instructions ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.upload-instructions li {
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+/* ✅ Subtabs */
+.subtabs {
+  display: flex;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.subtab-btn {
+  padding: 6px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 5px;
+  background: #f8fafc;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.subtab-btn:hover {
+  background: #e2e8f0;
+}
+
+.subtab-btn.active {
+  background: #2563eb;
+  color: #fff;
+  border-color: #2563eb;
+}
+
+/* ✅ Loading State */
+.loading {
+  text-align: center;
+  font-size: 16px;
+  padding: 20px;
+  color: #475569;
+}
+.welcome-img{
+  width: 100px;
+  margin: 0 auto;
+}
+.upload-section {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px dashed #999;
+  border-radius: 8px;
+  background: #f9f9f9;
+}
+
+.upload-section h3 {
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #333;
+}
+/* 
+.upload-instructions ul {
+  padding-left: 20px;
+  list-style: disc;
+  color: #555;
+}
+
+.upload-instructions li {
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+.upload-heading {
+  font-size: 20px;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 12px;
+  text-align: center;
+} */
+
+.sub-title {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #555;
+}
+.welcome-section {
+  position: relative;
+  height: 250px;
+  /* background: url("/client/public/images/finance-office.jpg") no-repeat center center/cover; */
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+ .welcome-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4); /* dark overlay */
+   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  border-radius: 12px;
+}
+
+.welcome-text {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.welcome-subtext {
+  font-size: 16px;
+  margin-top: 10px;
+} 
+.update-btn-container {
+  margin-top: 20px;
+  text-align: right;
+}
+
+.update-btn {
+  padding: 8px 16px;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.update-btn:hover {
+  background-color: #0056b3;
+}

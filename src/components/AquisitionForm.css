@@ -1,0 +1,22 @@
+.table-primary {
+  background-color: #1976d2 !important;
+  color: #fff !important;
+  font-weight: bold;
+}
+
+.table-hover tbody tr:hover {
+  background-color: #f5f8ff !important;
+  transition: all 0.3s ease;
+}
+
+.container {
+  max-width: 1200px;
+}
+
+button, .MuiButton-root {
+  border-radius: 8px !important;
+}
+
+.card {
+  border-radius: 16px;
+}

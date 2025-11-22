@@ -1,0 +1,73 @@
+{
+  "name": "client",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/icons-material": "^7.3.4",
+    "@mui/material": "^7.3.4",
+    "@mui/styles": "^6.5.0",
+    "@mui/x-data-grid": "^8.15.0",
+    "@mui/x-date-pickers": "^8.5.0",
+    "@radix-ui/react-slot": "^1.2.3",
+    "@syncfusion/ej2-react-calendars": "^30.2.4",
+    "@tanstack/react-table": "^8.21.3",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.10.0",
+    "bootstrap": "^5.3.8",
+    "bootstrap-icons": "^1.13.1",
+    "clsx": "^2.1.1",
+    "date-fns": "^4.1.0",
+    "file-saver": "^2.0.5",
+    "framer-motion": "^12.23.24",
+    "install": "^0.13.0",
+    "jspdf": "^3.0.3",
+    "jspdf-autotable": "^5.0.2",
+    "lucide-react": "^0.543.0",
+    "material-react-table": "^3.2.1",
+    "npm": "^11.4.2",
+    "react": "^19.1.0",
+    "react-big-calendar": "^1.19.4",
+    "react-bootstrap": "^2.10.10",
+    "react-country-state-city": "^1.1.12",
+    "react-dom": "^19.1.0",
+    "react-hook-form": "^7.57.0",
+    "react-icons": "^5.5.0",
+    "react-router-dom": "^7.6.0",
+    "react-scripts": "5.0.1",
+    "react-tabs": "^6.1.0",
+    "react-toastify": "^11.0.5",
+    "swiper": "^12.0.2",
+    "tailwind-variants": "^3.1.1",
+    "web-vitals": "^2.1.4",
+    "xlsx": "^0.18.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

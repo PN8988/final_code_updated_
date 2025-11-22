@@ -1,0 +1,176 @@
+/* Wrapper for centering the whole form */
+.wrapper-employer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  background-color: #f8f9fa;
+  min-height: 90vh;
+}
+
+/* Container for the employer form */
+.employermaster-form-container {
+  /* width: 100%; */
+  max-width: 800px;
+  background: white;
+  padding: 40px 50px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  background-color: cadetblue;
+  margin-top: 40px;
+}
+
+
+/* Form Title */
+.employermaster-form-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+/* Two-column layout for form rows */
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 15px;
+  width: 500px;
+  height: 60px;
+}
+
+/* Form group styling */
+.employermaster-form-group {
+flex: 1;
+  /* min-width: 220px; */
+  width: 600px;
+  height: 20px;
+  
+}
+
+/* Smaller label styling */
+.employermaster-form-group label {
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 5px;
+  /* color: #333; */
+  width:100%;
+  height: 40px;
+}
+.form{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Input styles */
+.employermaster-form-group input {
+  padding: 6px 8px;
+  /* font-size: 20px; */
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.2s;
+  gap: 10px;
+  width: 200px;
+  padding: 8px;
+  margin-right: 10px;
+  /* height: 30px; */
+}
+
+.employermaster-form-group input:focus {
+  border-color: #007bff;
+}
+
+/* Submit button styling */
+.submit-btn {
+  /* display: block; */
+  /* margin: 20px auto 0; */
+  padding: 4px 16px;
+  /* font-size: 14px; */
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.submit-btn:hover {
+  background: #0056b3;
+}
+
+.button-group2 {
+  display: flex;
+  justify-content:flex-end;
+  align-items:right;
+  /* gap: 20px;
+  margin-right: 20px;
+  position:inherit; */
+  
+}
+
+.button-group .submit-btn {
+  /* flex: 1;              make both buttons take equal space */
+  max-width: 140px;     /* limit button width */
+}
+.form-row-3col {
+  display: flex;
+  gap: 20px;
+}
+
+.form-row-3col .employermaster-form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+/* Common styling for rows with three columns */
+.form-row-3col {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* horizontal + vertical gap between fields */
+  margin-bottom: 15px;
+}
+
+/* Make all form-group blocks share available space equally */
+/* Label and input in same row */
+.employermaster-form-group {
+  display: flex;
+  align-items: center;   /* vertically align label and input */
+  gap: 10px;             /* space between label and input */
+  margin-bottom: 15px;   /* spacing between each form row */
+}
+
+/* Make label a fixed width so inputs align nicely */
+.employermaster-form-group label {
+  width: 150px;          /* adjust as needed */
+  margin-bottom: 0;      /* remove the extra gap since now inline */
+}
+
+/* Input should expand properly */
+.employermaster-form-group input,
+.employermaster-form-group select {
+  flex: 1;               /* take remaining space */
+  min-width: 200px;
+}
+
+.employermaster-form-group input:focus,
+.employermaster-form-group select:focus {
+  border-color: #007bff;
+}
+/* Make all form inputs uniform */
+.form-row-3col .employermaster-form-group input,
+.form-row-3col .employermaster-form-group select {
+  width: 100%;
+  padding: 6px 8px;
+  box-sizing: border-box;
+}
+
+/* Set employer name field to a fixed reasonable width */
+/* .employermaster-form-group input[name="empName"] {
+  max-width: 250px; /* adjust as needed */
+/* } */
+
+/* Optional: make PAN and TAN smaller */
+/* .employermaster-form-group input[name="panNumber"],
+.employermaster-form-group input[name="tanNumber"] {
+  max-width: 180px;
+} */

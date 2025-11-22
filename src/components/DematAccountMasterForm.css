@@ -1,0 +1,158 @@
+/* 🌟 Container */
+.demat-wrap {
+  max-width: 700px;
+  margin: 30px auto;
+  padding: 25px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* 🌟 Headings */
+.demat-wrap h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.demat-wrap h3 {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  color: #34495e;
+}
+
+/* 🌟 Flash Message */
+.flash {
+  background: #dff0d8;
+  color: #3c763d;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* 🌟 Form Layout */
+.demat-form {
+  margin-bottom: 25px;
+}
+
+.demat-form-row {
+  display: flex;
+  gap: 20px;
+}
+.demat-form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.demat-form-group label {
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #444;
+}
+
+.demat-form-group input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border 0.2s;
+}
+
+.demat-form-group input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* 🌟 Buttons */
+.actions {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+.actions button {
+  padding: 10px 18px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.actions button[type="submit"] {
+  background: #007bff;
+  color: #fff;
+}
+
+.actions button[type="submit"]:hover {
+  background: #0056b3;
+}
+
+.actions .secondary {
+  background: #f1f1f1;
+  color: #333;
+}
+
+.actions .secondary:hover {
+  background: #ddd;
+}
+
+button.danger {
+  background: #e74c3c;
+  color: #fff;
+}
+
+button.danger:hover {
+  background: #c0392b;
+}
+
+/* 🌟 Table */
+.table-wrap {
+  overflow-x: auto;
+}
+
+.demat-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.demat-table th,
+.demat-table td {
+  border: 1px solid #ddd;
+  padding: 10px 12px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.demat-table th {
+  background: #f8f9fa;
+  font-weight: 600;
+  color: #333;
+}
+
+.demat-table tr:nth-child(even) {
+  background: #fafafa;
+}
+
+.demat-table a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.demat-table a:hover {
+  text-decoration: underline;
+}
+
+/* 🌟 Responsive */
+@media (max-width: 768px) {
+  .demat-master-row {
+    flex-direction: column;
+  }
+}

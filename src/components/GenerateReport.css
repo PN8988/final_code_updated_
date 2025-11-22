@@ -1,0 +1,68 @@
+/* Page container */
+.report-page {
+  position: relative;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+  background: #fff;
+  margin-top: 60px;
+}
+
+/* Fullscreen (Maximized) */
+.report-page.maximized {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #fff;
+  z-index: 9999;
+  overflow: auto;
+  box-shadow: none;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Top-right controls */
+.report-window-controls {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  gap: 6px;
+}
+
+.control-btn {
+  border: none;
+  background: #e0e0e0;
+  padding: 4px 8px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.control-btn:hover {
+  background: #cfcfcf;
+}
+
+.control-btn.close {
+  background: #ff4d4d;
+  color: white;
+}
+
+.control-btn.close:hover {
+  background: #e60000;
+}
+
+/* Bottom-right actions */
+.report-actions {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  display: flex;
+  gap: 8px;
+}
+.report-header-actions {
+  margin-bottom: 20px; /* ✅ adds gap between button and table */
+}

@@ -1,0 +1,98 @@
+/* TransactionReportForm.css */
+
+.txn-report-container {
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  font-family: "Segoe UI", Roboto, sans-serif;
+}
+
+.title {
+  font-size: 1.4rem;
+  margin-bottom: 16px;
+  color: #333;
+  font-weight: 600;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.toolbar input {
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  flex: 1;
+  min-width: 150px;
+}
+
+.toolbar button {
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.toolbar button:hover {
+  background: #0056b3;
+}
+
+.toolbar button:disabled {
+  background: #999;
+  cursor: not-allowed;
+}
+
+.table-wrap {
+  overflow-x: auto;
+  max-height: 500px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.txn-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  background: white;
+}
+
+.txn-table thead {
+  position: sticky;
+  top: 0;
+  background: #f1f3f6;
+  z-index: 2;
+}
+
+.txn-table th,
+.txn-table td {
+  border: 1px solid #ddd;
+  padding: 8px 10px;
+  text-align: left;
+}
+
+.txn-table th {
+  font-weight: 600;
+  color: #222;
+}
+
+.txn-table tbody tr:hover {
+  background: #f9f9f9;
+}
+
+.txn-table td[style*="text-align: right"] {
+  font-family: "Courier New", monospace;
+}
+
+.txn-table tfoot td {
+  background: #f1f3f6;
+  font-weight: 600;
+}

@@ -1,0 +1,125 @@
+/* Container */
+.import-form-container {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 25px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  font-family: "Segoe UI", Arial, sans-serif;
+  margin-top: 50px;
+}
+
+/* Title */
+.title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+/* Client Info Box */
+.client-info-box {
+  background: #f9f9f9;
+  border: 1px solid #e3e3e3;
+  padding: 12px 18px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+.client-info-box p {
+  margin: 4px 0;
+}
+
+/* Labels & Groups */
+.import-form-group {
+  margin-bottom: 20px;
+}
+.import-form-group label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #34495e;
+}
+
+/* Options grid (half-year, quarter, date) */
+.options-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 10px;
+}
+
+/* Months grid (calendar look) */
+.months-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
+  margin-top: 10px;
+}
+
+/* Option labels */
+.option-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f2f6fc;
+  border: 1px solid #dcdfe6;
+  border-radius: 8px;
+  padding: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  font-size: 13px;
+  font-weight: 500;
+}
+.option-label input {
+  display: none;
+}
+.option-label:hover {
+  background: #e9f3ff;
+  border-color: #5b8def;
+}
+.option-label input:checked + span,
+.option-label input:checked ~ * {
+  color: #fff;
+  background: #5b8def;
+  border-color: #5b8def;
+}
+
+/* File info */
+.file-info {
+  font-size: 13px;
+  color: #555;
+  margin-top: 6px;
+}
+
+/* Buttons */
+.import-button-group {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 25px;
+}
+.btn {
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease-in-out;
+}
+.btn.upload {
+  background: #3498db;
+  color: #fff;
+}
+.btn.upload:hover {
+  background: #2980b9;
+}
+.btn.next {
+  background: #2ecc71;
+  color: #fff;
+}
+.btn.next:hover {
+  background: #27ae60;
+}

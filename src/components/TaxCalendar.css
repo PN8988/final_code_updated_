@@ -1,0 +1,179 @@
+.tax-calendar {
+  max-width: 500px;
+  margin: 40px auto;
+  border: 1.5px solid #ccc;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 20px;
+  font-family: 'Roboto', sans-serif;
+  background: #fff;
+  margin-top: 90px;
+}
+
+/* .header {
+  text-align: center;
+  background-color: #b670f4;
+  color: white;
+  padding: 15px;
+  font-size: 22px;
+  font-weight: bold;
+  border-radius: 8px;
+  margin-bottom: 20px;
+} */
+
+.section {
+  margin-bottom: 25px;
+}
+
+.section h3 {
+  font-size: 18px;
+  margin-bottom: 12px;
+  color: #333;
+  /* border-left: 4px solid #b670f4;
+  padding-left: 8px; */
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 12px;
+}
+
+.card {
+  
+  background-color: #f9f9f9;
+  border: 2px solid #eee;
+  padding: 12px;
+  text-align: center;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  background-color: #ece6f9;
+  border-color: #b670f4;
+  transform: scale(1.05);
+}
+
+.card.selected {
+  background-color: #6d28d9;
+  color: white;
+  border-color: #7c3dce;
+}
+
+.dates {
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+}
+
+.date-card {
+  background-color: #f1f1f1;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  text-align: center;
+  border: 1px solid #ddd;
+  transition: all 0.3s ease;
+}
+
+.date-card:hover {
+  background-color: #dcd0f9;
+  border-color: #b670f4;
+  transform: scale(1.05);
+}
+.fy-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #6d28d9;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  width:480px;
+}
+.month-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #a0c9c9;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  width:450px;
+}
+.quarter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #da92b0;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  width:450px;
+}
+
+.halfyear-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #d68f8f;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  width:450px;
+}
+.fy-header button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.month-header button,.quarter-header button, .halfyear-header button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.fy-header button:hover {
+  transform: scale(1.2);
+}
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.day-header {
+  font-weight: bold;
+  text-align: center;
+  background: #f0f0f0;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.date-cell {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fafafa;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.date-cell.empty {
+  background: transparent;
+  border: none;
+}

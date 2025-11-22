@@ -1,0 +1,213 @@
+/* TaxCalendarMaster.css */
+
+/* Variables */
+:root{
+  --bg: #f6f8fb;
+  --card: #ffffff;
+  --muted: #6b7280;
+  --accent: #2563eb;
+  --accent-600: #1e40af;
+  --border: #e6e9ef;
+  --success: #10b981;
+  --danger: #ef4444;
+  --radius: 8px;
+  --max-width: 1100px;
+  --gap: 16px;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* Page container */
+.tax-cal-root {
+  background: var(--bg);
+  min-height: 100vh;
+  padding: 28px;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  width:1700px;
+  margin-top: 70px;
+}
+
+/* Card */
+.tax-cal-card {
+  width: 100%;
+  max-width: var(--max-width);
+  background: var(--card);
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(16,24,40,0.06);
+  padding: 22px;
+  box-sizing: border-box;
+  border: 1px solid var(--border);
+}
+
+/* Header */
+.tax-cal-card h2 {
+  margin: 0 0 18px 0;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Form layout: responsive 2-col grid */
+.tax-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gap);
+  align-items: start;
+}
+
+/* Make textarea span two columns */
+.tax-form textarea {
+  grid-column: 1 / -1;
+  min-height: 96px;
+  resize: vertical;
+}
+
+/* Inputs and select styling */
+.tax-form input[type="text"],
+.tax-form input[type="number"],
+.tax-form select,
+.tax-form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: #fff;
+  box-sizing: border-box;
+  outline: none;
+  font-size: 14px;
+  color: #111827;
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+
+.tax-form input::placeholder,
+.tax-form textarea::placeholder {
+  color: #9aa3b2;
+}
+
+/* Focus state */
+.tax-form input:focus,
+.tax-form select:focus,
+.tax-form textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(37,99,235,0.08);
+}
+
+/* Single-column controls (full row) */
+.form-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+/* Button */
+.btn {
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: transform .06s ease, box-shadow .06s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(180deg, var(--accent), var(--accent-600));
+  color: #fff;
+  box-shadow: 0 6px 14px rgba(37,99,235,0.18);
+}
+
+.btn-primary:hover { transform: translateY(-1px); }
+.btn-primary:active { transform: translateY(0); }
+
+/* Table container */
+.table-wrap {
+  overflow-x: auto;
+  margin-top: 20px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+/* Table */
+.tax-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 900px;
+  background: #fff;
+}
+
+.tax-table thead th {
+  text-align: left;
+  padding: 12px 14px;
+  font-size: 13px;
+  color: var(--muted);
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(180deg, #fbfcfe, #ffffff);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.tax-table tbody td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #f1f3f6;
+  font-size: 14px;
+  color: #111827;
+}
+
+/* Zebra rows */
+.tax-table tbody tr:nth-child(even) {
+  background: #fbfcfe;
+}
+
+/* Empty state row */
+.tax-table .empty {
+  text-align: center;
+  color: var(--muted);
+  padding: 20px;
+}
+
+/* Small helper text / muted */
+.muted {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* Responsive: collapse form into single column on small screens */
+@media (max-width: 860px) {
+  .tax-form {
+    grid-template-columns: 1fr;
+  }
+
+  .form-actions {
+    justify-content: stretch;
+  }
+
+  .btn-primary {
+    width: 100%;
+  }
+
+  .tax-table {
+    min-width: 700px;
+  }
+}
+
+/* Tiny screens */
+@media (max-width: 420px) {
+  .tax-cal-card {
+    padding: 16px;
+  }
+
+  .tax-cal-card h2 {
+    font-size: 18px;
+  }
+
+  .tax-table thead th,
+  .tax-table tbody td {
+    padding: 10px;
+    font-size: 13px;
+  }
+}

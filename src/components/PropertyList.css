@@ -1,0 +1,33 @@
+.property-list-wrapper {
+  padding: 2rem;
+  background-color: #f8f8f8;
+  border-radius: 10px;
+}
+
+.property-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background: white;
+}
+
+.property-table th,
+.property-table td {
+  border: 1px solid #ccc;
+  padding: 0.6rem;
+  text-align: center;
+}
+
+.property-table th {
+  background-color: #e0e0e0;
+}
+
+.action .back-btn1 {
+  padding: 6px 12px;
+  margin-bottom: 1rem;
+  background: #2b7cff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}

@@ -1,0 +1,138 @@
+.purchase-form-container {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  background-color: #f9f9f9;
+  font-family: Arial, sans-serif;
+}
+
+.purchase-form-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.horizontal-form-table {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-row {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.form-row label {
+  min-width: 150px;
+  font-weight: 500;
+}
+
+.form-row input {
+  padding: 6px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #aaa;
+  min-width: 100px;
+}
+
+
+.purchaser-table-header {
+  display: flex;
+  gap: 16px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.add-btn,
+.remove-btn {
+  padding: 6px 10px;
+  margin-top: 6px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.add-btn {
+  background-color: #2e7d32;
+  color: white;
+  align-self: flex-start;
+}
+
+.remove-btn {
+  background-color: #d32f2f;
+  color: white;
+}
+
+.action-group {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.action-group button {
+  padding: 10px 20px;
+  font-size: 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  color: white;
+}
+
+.save-btn1 {
+  background-color: #1976d2;
+}
+
+.delete-btn {
+  background-color: #f57c00;
+}
+
+.close-btn {
+  background-color: #616161;
+}
+
+@media screen and (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .form-row label {
+    min-width: unset;
+  }
+
+  .form-row input {
+    width: 0%;
+  }
+
+  .purchaser-table-header {
+    flex-direction: column;
+  }
+}
+.breakdown-table {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.breakdown-table table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.breakdown-table th,
+.breakdown-table td {
+  border: 1px solid #ccc;
+  padding: 6px 10px;
+  text-align: center;
+}
+
+.breakdown-table th {
+  background-color: #f1f1f1;
+}

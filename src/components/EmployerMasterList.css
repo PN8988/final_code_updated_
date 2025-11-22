@@ -1,0 +1,63 @@
+.employermaster-list-container {
+  max-width: 900px;
+  margin: 20px auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.employermaster-list-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.empty-message {
+  text-align: center;
+  color: #666;
+  font-size: 14px;
+}
+
+.employer-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.employer-table th,
+.employer-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+  font-size: 14px;
+}
+
+.employer-table th {
+  background-color: #f4f6f8;
+  font-weight: bold;
+  color: black;
+}
+.action-btn {
+  padding: 5px 10px;
+  margin: 0 3px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.edit-btn {
+  background-color: #007bff;
+  color: white;
+}
+
+.edit-btn:hover {
+  background-color: #0056b3;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: #a71d2a;
+}

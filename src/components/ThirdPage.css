@@ -1,0 +1,119 @@
+/* Container Styling */
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Styling */
+.container h2 {
+  margin-bottom: 20px;
+  color: #333333;
+  text-align: center;
+}
+
+ 
+/* .top-right {
+  text-align: right;
+   margin-bottom: 10px; 
+}   */
+
+.add-button {
+  padding: 7px 14px;
+  background-color: #4CAF50;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.add-button:hover {
+  background-color: #45a049;
+}
+
+/* Table Styling */
+.third-form-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.third-form-table th,
+.third-form-table td {
+  border: 1px solid #dddddd;
+  padding: 12px 15px;
+  text-align: left;
+}
+
+.third-form-table thead {
+  background-color: #f2f2f2;
+}
+
+.third-form-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Input Fields */
+.third-form-table input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Action Buttons */
+ .third-form-table button {
+  margin-right: 8px;
+  padding: 6px 12px;
+  background-color: #2196F3;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: background-color 0.3s ease;
+} 
+
+.third-form-table button:hover {
+  background-color: #0b7dda;
+}
+
+/* Status Checkbox */
+.third-form-table label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.third-form-table input[type="checkbox"] {
+  margin-right: 6px;
+}
+.nav-first-button{
+  background-color: rgb(46, 20, 216);
+  color: white;
+  padding: 7px 14px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+   margin-bottom: 10px;
+}
+.nav-second-button{
+  background-color: rgb(216, 82, 20);
+  color: white;
+  padding: 7px 14px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+   margin-bottom: 10px;
+  /* margin-bottom: 10px; */
+  
+}

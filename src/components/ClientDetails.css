@@ -1,0 +1,94 @@
+.form-container-wrapper1{
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center;     /* Centers vertically */
+  height: 100vh; 
+}
+h2{
+ color: antiquewhite;
+}
+
+
+.clientform-container{
+  width: 50%;
+  /* height: 200px; */
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  justify-content: center;
+  margin-top: 50px;
+  /* background-color: rgb(120, 124, 126); */
+}
+
+.client-form-table {
+  width: 100%;
+  border-collapse: collapse;
+  justify-content: center;
+}
+
+.client-form-table td {
+  padding: 10px;
+  vertical-align: top;
+}
+
+.client-form-table label {
+  font-weight: bold;
+}
+
+.client-form-table input,
+.client-form-table select {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.client-button-group {
+ padding: 8px 16px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+} 
+.save button{
+    background-color: #d32f2f;
+    color: white;
+}
+
+.client-button-group button {
+  padding: 10px 20px;
+  margin-left: 10px;
+  font-size: 16px;
+  cursor: pointer;
+ 
+  
+}
+
+.cancel-button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  margin-left: 10px;
+  border-radius: 4px;
+} 
+
+.cancel-button:hover {
+  background-color: #d32f2f;
+}
+.button-save{
+  background-color: rgb(11, 71, 11);
+  color: white;
+}
+.required {
+  color: red;
+  margin-left: 2px;
+}
+
+.status-check{
+  width: 1000px;
+  margin-block: 10px;
+
+}
+#clientName{
+  font-size: 14px;
+  width: 200px;
+}

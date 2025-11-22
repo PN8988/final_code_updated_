@@ -1,0 +1,178 @@
+Avoid applying flex and alignment to all elements globally
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+margin: auto;
+ 
+  /* max-width: 900px; */
+  max-width: 700px;
+}
+
+.property-card1 {
+  margin: 150px;
+}
+
+.property-table {
+  margin: 150px;
+   border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.display-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section-block {
+  margin-top: 20px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.display-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.display-table th,
+.display-table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+
+.display-table th {
+  background-color: #f0f0f0;
+}
+
+/* Button group aligned to the right */
+.buttons-container {
+   margin-top: 20px;
+ 
+  display: flex;
+  align-items: flex-end;
+  justify-content: right;
+  gap: 10px;
+}
+buttons{
+  margin: 90px;
+}
+/* Optional button styling */
+/* .button-edits,
+.button-delete,
+.button-view {
+  padding: 8px 16px;
+  border: none;
+  background-color: 
+  #007bff;
+  color: white;
+  display: flex;
+  align-items: flex-end;
+  justify-content: right;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.button-edit:hover,
+.button-delete:hover,
+.button-view:hover {
+  background-color: #0056b3;
+}
+
+.main-container {
+  padding: 2rem;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+  max-width: 900px;
+} */
+
+.main-container {
+  padding: 30px;
+  font-family: 'Segoe UI', sans-serif;
+  max-width: 700px;
+}
+
+.property-card1 {
+  background-color: #fdfdfd;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin: 150px;
+}
+
+.property-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.property-table th,
+.property-table td {
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+.property-table th {
+  background-color: #f0f0f0;
+  color: #333;
+  font-weight: 600;
+}
+
+.property-table td {
+  background-color: #fff;
+}
+
+.buttons-container {
+  margin-top: 20px;
+  /* max-width: 900px; */
+  display: flex;
+  align-items: flex-end;
+  justify-content: right;
+  gap: 10px;
+}
+button{
+  margin: 90px;
+}
+
+.back-button {
+  background-color: #1976d2;
+  /* display: flex; */
+  justify-content:right;
+  align-items: flex-end;
+  color: white;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.back-button:hover {
+  background-color: #145ea8;
+}
+.button-edits{
+background-color: #d2198b;
+color: white;
+border-radius: 6px;
+border: none;
+padding: 8px 16px;
+
+
+}
+label{
+  margin-top: 20px;
+  padding:8px 20px ;
+  display: flex;
+  align-items: flex-end;
+  justify-content: right;
+}

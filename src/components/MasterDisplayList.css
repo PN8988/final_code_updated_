@@ -1,0 +1,95 @@
+/* Container Styling */
+.master-table-container {
+  padding: 2rem;
+  background: linear-gradient(to right, #f8f9fa, #e9ecef);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Table Styling */
+.mrt-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Table Header */
+.mrt-table thead {
+  background-color: #343a40;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.mrt-table th {
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+}
+
+/* Table Body */
+.mrt-table tbody tr {
+  border-bottom: 1px solid #dee2e6;
+  transition: background-color 0.3s ease;
+}
+
+.mrt-table tbody tr:hover {
+  background-color: #f1f3f5;
+}
+
+.mrt-table td {
+  padding: 1rem;
+  color: #495057;
+}
+
+/* Dropdown Styling */
+.mui-autocomplete {
+  width: 100%;
+}
+
+.mui-autocomplete .MuiInputBase-root {
+  border-radius: 4px;
+  background-color: #f8f9fa;
+  transition: background-color 0.3s ease;
+}
+
+.mui-autocomplete .MuiInputBase-root:hover {
+  background-color: #e9ecef;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .mrt-table thead {
+    display: none;
+  }
+
+  .mrt-table, .mrt-table tbody, .mrt-table tr, .mrt-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .mrt-table tr {
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #dee2e6;
+  }
+
+  .mrt-table td {
+    padding: 0.75rem;
+    text-align: right;
+    position: relative;
+  }
+
+  .mrt-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    width: 50%;
+    padding-left: 1rem;
+    font-weight: bold;
+    text-align: left;
+    color: #6c757d;
+  }
+}

@@ -1,0 +1,232 @@
+/* TaxCalendar.css */
+
+/* Container */
+.tax-calendar {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px 30px;
+  background: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-top: 50px;
+}
+
+/* Headings */
+.tax-calendar h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 28px;
+  color: #333;
+}
+
+.tax-calendar h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: #444;
+}
+
+/* Form Section */
+.form-section {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.form-section input[type="text"] {
+  flex: 1;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.form-section input[type="text"]:focus {
+  border-color: #007bff;
+}
+
+.form-section button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.form-section button:hover {
+  background-color: #0056b3;
+}
+
+/* Selection Section */
+.selection-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px 30px;
+  margin-bottom: 30px;
+}
+
+.selection-section label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #555;
+}
+
+.selection-section select {
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.selection-section select:focus {
+  border-color: #007bff;
+}
+
+/* Report Section */
+.report-section {
+  margin-top: 30px;
+}
+
+.report-section table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.report-section th,
+.report-section td {
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 15px;
+}
+
+.report-section th {
+  background-color: #007bff;
+  color: #fff;
+  font-weight: 600;
+}
+
+.report-section tr:nth-child(even) {
+  background-color: #f4f6f8;
+}
+
+.report-section tr:hover {
+  background-color: #e8f0fe;
+  transition: background 0.2s;
+}
+.normal-btn {
+  margin: 5px;
+  padding: 10px;
+  background: #f0f0f0;
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.selected-btn {
+  margin: 5px;
+  padding: 10px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Calendar Grid */
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr); /* 7 days in a week */
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.calendar-cell {
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 8px;
+  background: #fafafa;
+  text-align: center;
+  transition: 0.2s;
+}
+
+.calendar-cell:hover {
+  background: #e8f0fe;
+  transform: scale(1.05);
+}
+
+.date {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.event {
+  font-size: 12px;
+  color: #555;
+}
+.normal-btn {
+  margin: 5px;
+  padding: 10px;
+  background: #f0f0f0;
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.selected-btn {
+  margin: 5px;
+  padding: 10px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr); /* 7 days per week */
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.calendar-cell {
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 8px;
+  background: #fafafa;
+  text-align: center;
+  transition: 0.2s;
+}
+
+.calendar-cell:hover {
+  background: #e8f0fe;
+  transform: scale(1.05);
+}
+
+.date {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.event {
+  font-size: 12px;
+  color: #555;
+}

@@ -1,0 +1,250 @@
+
+
+.client-list-wrapper {
+ margin-left: 250px; /* adjust to your sidebar width */
+  /* padding: 20px; */
+  padding-top:70px;
+  
+}
+.heading {
+  color: #000;
+  text-align: left;
+   margin-bottom: 20px
+}
+
+.client-list-container {
+  margin-top: 50x;
+  /* width: 100%;
+  height: 100%; */
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+  width: 100%;
+  /* max-width: 1200px; */
+}
+
+.client-wapper-table{
+  overflow-x: auto;
+}
+
+.top-controls {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.button-groupp {
+  /* position: relative;  */
+  top: 40;
+  right: 20px;
+  display: flex; 
+  align-items:end;
+  justify-content: end; 
+  gap: 10px; 
+  position:absolute; 
+}
+
+.button-groupp input[type="text"] {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: rgb(193, 193, 212);
+}
+
+.button-groupp button {
+  padding: 8px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+
+}
+
+.button-groupp button:focus {
+  outline: 2px solid #000;
+}
+
+
+.client-table {
+  width: 100%;
+  /* border-collapse: collapse; */
+  margin-bottom: 20px;
+  margin-top: 6%;
+  justify-content: center;
+  border-radius: 4px;
+  /* table-layout: fixed;  */
+  /* position: fixed; */
+}
+
+.client-table th,
+.client-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  /* text-align: left; */
+}
+
+.client-table th {
+  background-color: #bdcad4;
+  font-weight: bold;
+}
+
+.client-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.client-table tr:hover {
+  background-color: #dddada;
+}
+
+.client-table button {
+  padding: 6px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.client-table button:focus {
+  outline: 2px solid #000;
+}
+
+
+ .pagination-controls {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.pagination-controls button {
+  padding: 6px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.pagination-controls button:focus {
+  outline: 2px solid #000;
+}
+
+.pagination-controls span {
+  font-size: 14px;
+} 
+
+.button-view{
+  background-color: rgb(17, 121, 17);
+  color: white;
+}
+.button-edits{
+  background-color: rgb(36, 36, 172);
+  color: white;
+}
+.btns-groups{
+ display: flex;
+ justify-content: flex-end;
+ gap: 10px;
+}
+.status-label {
+  font-weight: bold;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 5px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.status-label.active {
+  color: green;
+  
+}
+
+.status-label.inactive {
+  color: red;
+  
+}
+
+.status-check {
+  width:50px;
+  position: initial;
+
+}
+
+.status-column {
+  width: 1200px;
+  text-align: center;
+}
+
+.button-search{
+  background-color: blue;
+  color:white;
+}
+.button-reset{
+  background-color: red;
+  color: white;
+}
+.button-back{
+  background-color: darkmagenta;
+  color: white;
+}
+.button-add{
+  background-color: green;
+  color: white;
+}
+.btn-updates{
+  background-color: dodgerblue;
+  color: white;
+}
+.button-edits{
+  background-color: tomato;
+  color: white;
+}
+.btn-select{
+  background-color: indigo;
+  color: white;
+}
+.btn-delete {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 5px 8px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.pagination-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  background-color: #fff;
+  padding: 10px 20px;
+  border-top: 1px solid #ddd;
+}
+
+.fixed-pagination {
+  position: fixed;
+  bottom: 0;
+  left: 250px; /* same as your sidebar margin-left */
+  right: 0;
+  z-index: 1000;
+}
+
+.pagination-left,
+.pagination-right {
+  display: flex;
+  gap: 10px;
+}
+
+.pagination-center {
+  font-weight: bold;
+}

@@ -1,0 +1,134 @@
+/* === MAIN CONTAINER === */
+.container {
+  max-width: 1200px;
+}
+
+/* === CARD STYLING === */
+.MuiCard-root {
+  border-radius: 16px !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* === HEADING === */
+.text-center {
+  font-weight: 600 !important;
+  color: #1e3a8a !important; /* Deep blue */
+  letter-spacing: 0.5px;
+}
+
+/* === GRID LABELS === */
+.MuiTextField-root {
+  background-color: #fafafa;
+  border-radius: 8px;
+}
+
+/* === TABLE STYLING === */
+.MuiTableHead-root {
+  background-color: #0d6efd !important; /* Bootstrap blue */
+}
+
+.MuiTableCell-head {
+  color: white !important;
+  font-weight: 600 !important;
+  text-align: center !important;
+}
+
+.MuiTableCell-body {
+  text-align: center !important;
+  padding: 10px 8px !important;
+}
+
+/* === BUTTON GROUP === */
+.d-flex.justify-content-end.gap-3 button {
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+  text-transform: none !important;
+  padding: 8px 20px !important;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease-in-out;
+}
+
+.d-flex.justify-content-end.gap-3 button:hover {
+  transform: scale(1.05);
+}
+
+/* === TAX MONTHS TABLE === */
+.tax-month-table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 25px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.tax-month-table th,
+.tax-month-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+.tax-month-table th {
+  background-color: #1e40af;
+  color: white;
+  font-weight: 600;
+}
+
+/* === TRANSACTION LINKS === */
+.transaction-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+  text-align: right;
+  margin-top: 20px;
+}
+
+.transaction-links a {
+  color: #0d6efd;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+.transaction-links a:hover {
+  color: #084298;
+  text-decoration: underline;
+}
+
+/* === IMPORTED DATA TABLE === */
+.imported-data-table {
+  margin-top: 30px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.imported-data-table th {
+  background-color: #0d6efd;
+  color: white;
+  text-align: center;
+  font-weight: 600;
+}
+
+.imported-data-table td {
+  text-align: center;
+  padding: 8px;
+}
+
+.imported-data-table tr:hover {
+  background-color: #f3f4f6;
+  cursor: pointer;
+}
+
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 768px) {
+  .transaction-links {
+    align-items: center;
+    text-align: center;
+  }
+
+  .d-flex.justify-content-end.gap-3 {
+    justify-content: center !important;
+  }
+}

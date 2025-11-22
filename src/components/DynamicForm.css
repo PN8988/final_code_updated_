@@ -1,0 +1,134 @@
+/* DynamicForm.css */
+
+/* Container for the entire form */
+body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #eaeaea;
+}
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  background-color: #f0f0f0; /* Optional: background color */
+}
+
+.my-form {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 400px; /* Adjust as needed */
+}
+
+
+/* Section for PAN search */
+.search-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.search-section label {
+  font-weight: bold;
+}
+
+.search-section input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.search-section button {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.search-section button:hover {
+  background-color: #0056b3;
+}
+
+/* Section for client attributes */
+.attributes-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.attributes-section div {
+  display: flex;
+  flex-direction: column;
+}
+
+.attributes-section label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.attributes-section input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Section for properties */
+.properties-section {
+  margin-bottom: 20px;
+}
+
+.properties-section label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.property-item {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.property-item select {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Button to add new property */
+.add-property-button {
+  padding: 8px 16px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.add-property-button:hover {
+  background-color: #218838;
+}
+
+/* Submit button */
+.submit-button {
+  padding: 4px 8px;
+  background-color: #17a2b8;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #138496;
+}
