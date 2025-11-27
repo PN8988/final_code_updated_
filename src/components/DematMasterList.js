@@ -58,7 +58,7 @@ function DematMasterList() {
               <th>Website</th>
               <th>Support No</th>
               <th>Reg. Mo. No</th>
-              <th>Nominee</th>
+              {/* <th>Nominee</th> */}
               <th style={{ width: 160 }}>Actions</th>
             </tr>
           </thead>
@@ -71,47 +71,33 @@ function DematMasterList() {
               </tr>
             ) : (
               items.map((it, idx) => (
-                <tr key={it.id || idx}>
-                  <td>{idx + 1}</td>
-                   {/* <td>{it.dematAccountNo}</td>
-                  <td>{it.accountHolderName}</td> */}
-                  <td>{it.dpId || "-"} </td> 
-                  <td>{it.loginId}</td>
-                  <td>{it.depository || "-"}</td>
-                  <td>{it.brokerName || "-"}</td>
-                  <td>{it.openingDate || "-"}</td>
-                  <td>
-                    {it.website ? (
-                      <a
-                        href={it.website}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="link"
-                      >
-                        {it.website}
-                      </a>
-                    ) : (
-                      "-"
-                    )}
-                  </td>
-                  <td>{it.supportNumber || "-"}</td>
-                  <td>{it.registeredMobileNo || "-"}</td>
-                  <td>{it.nomineeDetails || "-"}</td>
-                  <td>
-                    <button
-                      className="btn edit-btn"
-                      onClick={() => handleEdit(it)}
-                    >
-                      Edit
-                    </button>
-                    <button
-                      className="btn danger-btn"
-                      onClick={() => handleDelete(it.id)}
-                    >
-                      Delete
-                    </button>
-                  </td>
-                </tr>
+                // <tr key={it.id || idx}>
+                 <tr>
+  <td>{idx + 1}</td>
+  <td>{it.dpId}</td>
+  <td>{it.loginId}</td>
+  <td>{it.depository || "-"}</td>
+  <td>{it.brokerName || "-"}</td>
+  <td>{it.openingDate || "-"}</td>
+  <td>
+    {it.website ? (
+      <a href={it.website} target="_blank" rel="noreferrer" className="link">
+        {it.website}
+      </a>
+    ) : ("-")}
+  </td>
+  <td>{it.supportNumber || "-"}</td>
+  <td>{it.registeredMobileNo || "-"}</td>
+  <td>
+    <button className="btn edit-btn" onClick={() => handleEdit(it)}>
+      Edit
+    </button>
+    <button className="btn danger-btn" onClick={() => handleDelete(it.id)}>
+      Delete
+    </button>
+  </td>
+</tr>
+
               ))
             )}
           </tbody>

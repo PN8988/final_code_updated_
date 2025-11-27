@@ -52,6 +52,7 @@ const AdminNavbar = () => {
     { name: "Client Master", path: "/clientlist" },
     { name: "Employer Master", path: "/admin/masters/employer" },
     { name: "Bank Master", path: "/admin/masters/bankmasterlist" },
+    { name: "Demat Master", path: "/admin/demat-account-master" },
     { name: "Tax Year Master", path: "/admin/masters/tax-year" },
     { name: "Security Master", path: "/admin/masters/security" },
     { name: "Property Type Master", path: "/admin/masters/property-type" },

@@ -179,8 +179,8 @@ function App() {
 <Route path="/residential-property-form" element={<ResidentialPropertyForm />} />
 <Route path="/view-properties" element={<ResidentialPropertyTable />} />
 <Route path="/admin/masters/employer"  element={<EmployerMasterForm/>} />
-<Route path='/demat-account-master' element={<DematAccountMasterForm/>} />
-<Route path='employerform' element={<EmployerForm/>} />
+<Route path='/admin/demat-account-master' element={<DematAccountMasterForm/>} />
+<Route path='/employerform' element={<EmployerForm/>} />
  <Route path='/employee-details' element={<EmployeeDetails/>}/>
 <Route path="/admin/masters/bankmasterlist" element={<BankMasterList />} />
 <Route path='/employermasterlist' element={<EmployerMasterList/>} />

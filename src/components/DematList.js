@@ -54,38 +54,33 @@ const DematList = () => {
         </thead>
 
         <tbody>
-          {dematList.map((demat, idx) => (
-            <tr key={idx}>
-              <td>{idx + 1}</td>
-              <td>{demat.dpid || "-"}</td>
-              <td>{demat.depositoryId || "-"}</td>
-              <td>{demat.accountNo || "-"}</td>
-              <td>{demat.accountHolderName || "-"}</td>
+  {dematList.map((demat, idx) => (
+    <tr key={idx}>
+      <td>{idx + 1}</td>
+      <td>{demat.dpId || "-"}</td>
+      <td>{demat.depository || "-"}</td>
+      <td>{demat.dematAccountNo || "-"}</td>
+      <td>{demat.d_AccountHolderName || "-"}</td>
 
-              <td>
-                <button
-                  style={{
-                    background: "green",
-                    color: "white",
-                    padding: "6px 10px",
-                    cursor: "pointer",
-                    border: "none",
-                    borderRadius: "4px",
-                  }}
-                  onClick={() => handleImport(demat)}
-                >
-                  Import (Excel)
-                </button>
-              </td>
-            </tr>
-          ))}
+      <td>
+        <button
+          style={{
+            background: "green",
+            color: "white",
+            padding: "6px 10px",
+            cursor: "pointer",
+            border: "none",
+            borderRadius: "4px",
+          }}
+          onClick={() => handleImport(demat)}
+        >
+          Import (Excel)
+        </button>
+      </td>
+    </tr>
+  ))}
+</tbody>
 
-          {dematList.length === 0 && (
-            <tr>
-              <td colSpan={6} align="center">No demat records found</td>
-            </tr>
-          )}
-        </tbody>
       </table>
     </div>
   );

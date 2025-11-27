@@ -4,17 +4,17 @@ import axios from "axios";
 import "./DematAccountMasterForm.css";
 
 const emptyForm = {
-  dpid: "", // New field
+  dpid: "",
   depository: "",
   brokerName: "",
-  openingDate: "",
+  openingDate: "",      // YYYY-MM-DD format for backend LocalDate
   website: "",
   supportNumber: "",
   loginId: "",
   password: "",
   registeredMobileNo: "",
-  nomineeDetails: "",
 };
+
 
 function DematAccountMasterForm() {
   const [form, setForm] = useState(emptyForm);
@@ -207,7 +207,7 @@ function DematAccountMasterForm() {
                 placeholder="Registered Mobile No"
               />
             </div>
-            <div className="demat-form-group">
+            {/* <div className="demat-form-group">
               <label>Nominee Details</label>
               <input
                 type="text"
@@ -216,7 +216,7 @@ function DematAccountMasterForm() {
                 onChange={onChange}
                 placeholder="Nominee Details"
               />
-            </div>
+            </div> */}
           </div>
 
         </div>
