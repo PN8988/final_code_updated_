@@ -380,6 +380,32 @@ const ClientList = () => {
     }
   };
 
+  const goToBankForm = async (client) => {
+  const res = await axios.get(`http://localhost:8080/api/clients/${client.panId}`);
+  
+  navigate("/bank-form", {
+    state: {
+      profile: res.data   // Now contains profileId
+    }
+  });
+};
+
+const openClientProfile = async (client) => {
+  const response = await axios.get(
+    `http://localhost:8080/api/clients/getProfileByPan?panId=${client.panId}`
+  );
+
+  const profile = response.data;
+
+  navigate("/client-profile", {
+    state: {
+      selectedClient: client,
+      profileId: profile.profileId
+    }
+  });
+};
+
+
   // ✅ Delete client
   const handleDelete = async (clientId) => {
     if (!window.confirm("Are you sure you want to delete this client?")) return;

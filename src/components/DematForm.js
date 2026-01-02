@@ -6,9 +6,11 @@ import "./DematForm.css";
 export default function DematForm() {
   const location = useLocation();
   const navigate = useNavigate();
-  const profileId = location.state?.profileId;
+
+  const [client, setClient] = useState(null);
 
   const [form, setForm] = useState({
+    panId: "",
     dematAccountNo: "",
     d_AccountHolderName: "",
     dpId: "",
@@ -25,9 +27,33 @@ export default function DematForm() {
 
   const [errors, setErrors] = useState({});
 
-  // --------------------------
-  // 🔥 Auto Fetch Demat Master
-  // --------------------------
+  //------------------------------------
+  // 🔥 Fetch Client Details by PAN ID
+  //------------------------------------
+  const fetchClientByPan = async (panId) => {
+    try {
+      const res = await axios.get(
+        `http://localhost:8080/api/client/getByPan/${panId}`
+      );
+
+      if (res.data) {
+        setClient(res.data);
+
+        setForm((prev) => ({
+          ...prev,
+          d_AccountHolderName: res.data.clientName,
+          regiMobileNo: res.data.mobileNumber,
+        }));
+      }
+    } catch (err) {
+      console.log("Client not found for PAN");
+      setClient(null);
+    }
+  };
+
+  //------------------------------------
+  // 🔥 Auto Fetch Demat Master by DPID
+  //------------------------------------
   const fetchDematMaster = async (dpid) => {
     try {
       const res = await axios.get(
@@ -42,7 +68,6 @@ export default function DematForm() {
           website: res.data.website || "",
           supportNo: res.data.supportNumber || "",
           openingDate: res.data.openingDate || "",
-          regiMobileNo: res.data.registeredMobileNo || "",
           nomineeDetails: res.data.nomineeDetails || "",
         }));
       }
@@ -51,24 +76,29 @@ export default function DematForm() {
     }
   };
 
-  // --------------------------
+  //------------------------------------
   // 🔥 Handle Input Change
-  // --------------------------
+  //------------------------------------
   function handleChange(e) {
     const { name, value } = e.target;
 
     setForm((prev) => ({ ...prev, [name]: value }));
+
+    if (name === "panId" && value.length === 10) {
+      fetchClientByPan(value);
+    }
 
     if (name === "dpId" && value.length >= 6) {
       fetchDematMaster(value);
     }
   }
 
-  // --------------------------
-  // 🔥 Validate Required Fields
-  // --------------------------
+  //------------------------------------
+  // 🔥 Validation
+  //------------------------------------
   function validate() {
     const errs = {};
+    if (!form.panId) errs.panId = "Required";
     if (!form.dematAccountNo) errs.dematAccountNo = "Required";
     if (!form.d_AccountHolderName) errs.d_AccountHolderName = "Required";
     if (!form.dpId) errs.dpId = "Required";
@@ -79,9 +109,9 @@ export default function DematForm() {
     return Object.keys(errs).length === 0;
   }
 
-  // --------------------------
-  // 🔥 Submit Demat Form
-  // --------------------------
+  //------------------------------------
+  // 🔥 Submit
+  //------------------------------------
   async function handleSubmit(e) {
     e.preventDefault();
     if (!validate()) return;
@@ -89,7 +119,7 @@ export default function DematForm() {
     try {
       const payload = {
         ...form,
-        clientProfile: { profileId },
+        clientProfile: { profileId: client?.profileId },
       };
 
       await axios.post("http://localhost:8080/api/demat/add", payload);
@@ -100,14 +130,11 @@ export default function DematForm() {
     }
   }
 
-  // --------------------------
-  // 🔥 UI
-  // --------------------------
   return (
     <div className="demat-container">
       <button
         className="btn-secondary"
-        onClick={() => navigate("/demat-list", { state: { profileId } })}
+        onClick={() => navigate("/demat-list")}
       >
         View Demat List
       </button>
@@ -115,9 +142,32 @@ export default function DematForm() {
       <form onSubmit={handleSubmit} className="demat-form">
         <h3 className="form-title">Add Demat Account</h3>
 
-        <div className="form-grid">
+        {/* 🔹 PAN INPUT */}
+        <div className="form-field">
+          <label>PAN ID</label>
+          <input
+            name="panId"
+            value={form.panId}
+            onChange={handleChange}
+            placeholder="Enter PAN ID"
+            maxLength={10}
+          />
+          {errors.panId && <p className="error-text">{errors.panId}</p>}
+        </div>
 
-          {/* Demat Account No */}
+        {/* 🔹 Show Client Info (Like BankForm) */}
+        {client && (
+          <div className="client-box">
+            <h4>Client Information</h4>
+            <p><b>Name:</b> {client.clientName}</p>
+            <p><b>Email:</b> {client.emailId}</p>
+            <p><b>Mobile:</b> {client.mobileNumber}</p>
+            <p><b>Profile ID:</b> {client.profileId}</p>
+          </div>
+        )}
+
+        <div className="form-grid">
+          {/* Demat fields remain same */}
           <div className="form-field">
             <label>Demat Account No</label>
             <input
@@ -131,7 +181,6 @@ export default function DematForm() {
             )}
           </div>
 
-          {/* Account Holder Name */}
           <div className="form-field">
             <label>Account Holder Name</label>
             <input
@@ -140,12 +189,8 @@ export default function DematForm() {
               onChange={handleChange}
               placeholder="Enter Account Holder Name"
             />
-            {errors.d_AccountHolderName && (
-              <p className="error-text">{errors.d_AccountHolderName}</p>
-            )}
           </div>
 
-          {/* DP ID */}
           <div className="form-field">
             <label>DP ID</label>
             <input
@@ -187,7 +232,6 @@ export default function DematForm() {
             <input name="regiMobileNo" value={form.regiMobileNo} readOnly />
           </div>
 
-          {/* ✅ Editable Nominee */}
           <div className="form-field full-width">
             <label>Nominee Details</label>
             <textarea
@@ -198,7 +242,6 @@ export default function DematForm() {
             />
           </div>
 
-          {/* Login ID */}
           <div className="form-field">
             <label>Login ID</label>
             <input
@@ -207,10 +250,8 @@ export default function DematForm() {
               onChange={handleChange}
               placeholder="Enter Login ID"
             />
-            {errors.loginId && <p className="error-text">{errors.loginId}</p>}
           </div>
 
-          {/* Password */}
           <div className="form-field">
             <label>Password</label>
             <input
@@ -220,7 +261,6 @@ export default function DematForm() {
               onChange={handleChange}
               placeholder="Enter Password"
             />
-            {errors.password && <p className="error-text">{errors.password}</p>}
           </div>
 
         </div>

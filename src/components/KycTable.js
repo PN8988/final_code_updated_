@@ -11,13 +11,19 @@ import {
   IconButton,
   Button,
   Pagination,
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogActions,
+  Typography,
 } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
 import SaveIcon from "@mui/icons-material/Save";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { useLocation, useNavigate } from "react-router-dom";
+import axios from "axios";
 
-export default function KycTablePage() {
+export default function KycTable() {
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -25,14 +31,17 @@ export default function KycTablePage() {
   const [editIndex, setEditIndex] = useState(null);
   const [editData, setEditData] = useState({});
   const [page, setPage] = useState(1);
+  const [addressDialog, setAddressDialog] = useState({ open: false, address: {} });
   const rowsPerPage = 10;
 
-  // ✅ Load data from KycForm
+  const userId = location.state?.userId;
+
   useEffect(() => {
-    if (location.state?.kycData) {
-      setSubmittedData(location.state.kycData);
-    }
-  }, [location.state]);
+    axios
+      .get("http://localhost:8080/api/kyc/allKyc")
+      .then((res) => setSubmittedData(res.data))
+      .catch((err) => console.error(err));
+  }, []);
 
   const handleEdit = (index) => {
     setEditIndex(index);
@@ -59,19 +68,29 @@ export default function KycTablePage() {
     setPage(value);
   };
 
-  const startIndex = (page - 1) * rowsPerPage;
-  const displayedData = submittedData.slice(startIndex, startIndex + rowsPerPage);
+  const handleViewAddress = (address) => {
+    setAddressDialog({ open: true, address });
+  };
 
-  // ✅ Function to create preview URLs for images
+  const handleCloseAddressDialog = () => {
+    setAddressDialog({ open: false, address: {} });
+  };
+
+  const startIndex = (page - 1) * rowsPerPage;
+  const displayedData = submittedData.slice(
+    startIndex,
+    startIndex + rowsPerPage
+  );
+
   const getFilePreview = (file) => {
     if (!file) return null;
-    if (typeof file === "string") return file; // backend URL
-    return URL.createObjectURL(file); // local preview
+    if (typeof file === "string") return `http://localhost:8080/${file}`;
+    return URL.createObjectURL(file);
   };
 
   return (
     <Paper sx={{ p: 3, mt: 3, borderRadius: 2, boxShadow: 3 }}>
-      <h3>KYC Data List (With Documents)</h3>
+      <h3>KYC Data List</h3>
 
       <Table>
         <TableHead>
@@ -83,9 +102,9 @@ export default function KycTablePage() {
             <TableCell>Email</TableCell>
             <TableCell>Mobile</TableCell>
             <TableCell>Address</TableCell>
-            {/* <TableCell>Photo</TableCell> */}
             <TableCell>Aadhaar File</TableCell>
             <TableCell>PAN File</TableCell>
+            <TableCell>Status</TableCell>
             <TableCell>Actions</TableCell>
           </TableRow>
         </TableHead>
@@ -102,56 +121,41 @@ export default function KycTablePage() {
                     <TableCell>
                       <TextField
                         value={editData.name || ""}
-                        onChange={(e) =>
-                          handleEditChange("name", e.target.value)
-                        }
+                        onChange={(e) => handleEditChange("name", e.target.value)}
                       />
                     </TableCell>
                     <TableCell>
                       <TextField
-                        value={editData.pan || ""}
-                        onChange={(e) =>
-                          handleEditChange("pan", e.target.value)
-                        }
+                        value={editData.panNumber || ""}
+                        onChange={(e) => handleEditChange("pan", e.target.value)}
                       />
                     </TableCell>
                     <TableCell>
                       <TextField
-                        value={editData.addhar || ""}
-                        onChange={(e) =>
-                          handleEditChange("addhar", e.target.value)
-                        }
+                        value={editData.aadhaarNumber || ""}
+                        onChange={(e) => handleEditChange("aadhaarNumber", e.target.value)}
                       />
                     </TableCell>
                     <TableCell>
                       <TextField
                         value={editData.email || ""}
-                        onChange={(e) =>
-                          handleEditChange("email", e.target.value)
-                        }
+                        onChange={(e) => handleEditChange("email", e.target.value)}
                       />
                     </TableCell>
                     <TableCell>
                       <TextField
-                        value={editData.mobile || ""}
-                        onChange={(e) =>
-                          handleEditChange("mobile", e.target.value)
-                        }
+                        value={editData.mobileNumber || ""}
+                        onChange={(e) => handleEditChange("mobileNumber", e.target.value)}
                       />
                     </TableCell>
                     <TableCell>
                       <TextField
                         value={editData.address || ""}
-                        onChange={(e) =>
-                          handleEditChange("address", e.target.value)
-                        }
+                        onChange={(e) => handleEditChange("address", e.target.value)}
                       />
                     </TableCell>
-                    <TableCell colSpan={4}>
-                      <IconButton
-                        color="primary"
-                        onClick={() => handleSave(globalIndex)}
-                      >
+                    <TableCell colSpan={3}>
+                      <IconButton color="primary" onClick={() => handleSave(globalIndex)}>
                         <SaveIcon />
                       </IconButton>
                     </TableCell>
@@ -159,60 +163,53 @@ export default function KycTablePage() {
                 ) : (
                   <>
                     <TableCell>{row.name}</TableCell>
-                    <TableCell>{row.pan}</TableCell>
-                    <TableCell>{row.addhar}</TableCell>
+                    <TableCell>{row.panNumber}</TableCell>
+                    <TableCell>{row.aadhaarNumber}</TableCell>
                     <TableCell>{row.email}</TableCell>
-                    <TableCell>{row.mobile}</TableCell>
-                    <TableCell>{row.address}</TableCell>
-
-                    {/* ✅ Document Previews */}
-                    {/* <TableCell>
-                      {row.photoFile && (
-                        <img
-                          src={getFilePreview(row.photoFile)}
-                          alt="Photo"
-                          width={60}
-                          height={60}
-                          style={{ borderRadius: "6px" }}
-                        />
-                      )}
-                    </TableCell> */}
-
+                    <TableCell>{row.mobileNumber}</TableCell>
                     <TableCell>
-                      {row.addharFile && (
+                      <Button
+                        variant="outlined"
+                        size="small"
+                        onClick={() => handleViewAddress(row.addressObject || {})}
+                      >
+                        View Address
+                      </Button>
+                    </TableCell>
+                    <TableCell>
+                      {row.aadhaarFilePath && (
                         <a
-                          href={getFilePreview(row.addharFile)}
+                          href={getFilePreview(row.aadhaarFilePath)}
                           target="_blank"
-                          rel="noreferrer"
+                          rel="noopener noreferrer"
                         >
                           View Aadhaar
                         </a>
                       )}
                     </TableCell>
-
                     <TableCell>
-                      {row.panFile && (
+                      {row.panFilePath && (
                         <a
-                          href={getFilePreview(row.panFile)}
+                          href={getFilePreview(row.panFilePath)}
                           target="_blank"
-                          rel="noreferrer"
+                          rel="noopener noreferrer"
                         >
                           View PAN
                         </a>
                       )}
                     </TableCell>
-
                     <TableCell>
-                      <IconButton
-                        color="primary"
-                        onClick={() => handleEdit(globalIndex)}
-                      >
+                      {row.kycCompleted ? (
+                        <span style={{ color: "green", fontWeight: "bold" }}>✔ Completed</span>
+                      ) : (
+                        <span style={{ color: "orange", fontWeight: "bold" }}>Pending</span>
+                      )}
+                    </TableCell>
+                    <TableCell>
+                      <IconButton color="primary" onClick={() => handleEdit(globalIndex)}>
                         <EditIcon />
                       </IconButton>
-                      <IconButton
-                        color="error"
-                        onClick={() => handleDelete(globalIndex)}
-                      >
+                      <IconButton color="error" onClick={() => handleDelete(globalIndex)}>
                         <DeleteIcon />
                       </IconButton>
                     </TableCell>
@@ -224,7 +221,6 @@ export default function KycTablePage() {
         </TableBody>
       </Table>
 
-      {/* Pagination */}
       <Box sx={{ display: "flex", justifyContent: "center", mt: 3 }}>
         <Pagination
           count={Math.ceil(submittedData.length / rowsPerPage)}
@@ -234,16 +230,33 @@ export default function KycTablePage() {
         />
       </Box>
 
-      {/* Back Button */}
       <Box sx={{ mt: 3, textAlign: "center" }}>
-        <Button
-          variant="contained"
-          color="secondary"
-          onClick={() => navigate("/update-kyc")}
-        >
+        <Button variant="contained" color="secondary" onClick={() => navigate("/update-kyc")}>
           Back to KYC Form
         </Button>
       </Box>
+
+      {/* ================= Address Dialog ================= */}
+      <Dialog open={addressDialog.open} onClose={handleCloseAddressDialog} fullWidth maxWidth="sm">
+        <DialogTitle>Saved Address</DialogTitle>
+        <DialogContent>
+          {addressDialog.address ? (
+            <>
+              <Typography><b>Line 1:</b> {addressDialog.address.address1 || "-"}</Typography>
+              <Typography><b>Line 2:</b> {addressDialog.address.address2 || "-"}</Typography>
+              <Typography><b>City:</b> {addressDialog.address.city || "-"}</Typography>
+              <Typography><b>District:</b> {addressDialog.address.district || "-"}</Typography>
+              <Typography><b>State:</b> {addressDialog.address.state || "-"}</Typography>
+              <Typography><b>Pincode:</b> {addressDialog.address.pincode || "-"}</Typography>
+            </>
+          ) : (
+            <Typography>No address found</Typography>
+          )}
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleCloseAddressDialog}>Close</Button>
+        </DialogActions>
+      </Dialog>
     </Paper>
   );
 }

@@ -14,11 +14,13 @@ import {
   saveBankAccount,
   getBankMasterList,
   getBankByIfsc,
+  addBankAccount,
 } from "../service/BankService";
 import { useNavigate, useLocation } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+import axios from "axios";
 
-const BankForm = ({ onSave }) => {
+const BankForm = ({ onSave, profileId}) => {
   const navigate = useNavigate();
   const location = useLocation();
   const selectedClient = location.state?.selectedClient;
@@ -36,6 +38,71 @@ const BankForm = ({ onSave }) => {
     client: { panId: selectedClient?.panId || "" },
     bankMaster: { ifscCode: "" },
   });
+
+
+const profile = location.state?.profile;
+
+console.log("Profile received in BankForm:", profile);
+
+ profileId = profile?.profileId;
+console.log("ProfileId => ", profileId);
+  
+//const profileId = location.state?.profileId;
+
+useEffect(() => {
+  console.log("Received profileId => ", profileId);
+}, []);
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  if (!selectedClient?.panId) {
+    alert("⚠️ Client PAN ID is required.");
+    return;
+  }
+  if (!formData.bankMaster.ifscCode) {
+    alert("⚠️ Please select a bank (IFSC code).");
+    return;
+  }
+  if (!formData.accountNumber.trim()) {
+    alert("⚠️ Account Number is required.");
+    return;
+  }
+  if (!profileId) {
+    alert("⚠️ Client Profile ID is missing.");
+    return;
+  }
+
+  setLoading(true);
+
+  try {
+    // ✅ Extract fields from formData to use in payload
+    const { accountNumber, accountType, nominee, refund, bankMaster } = formData;
+    const accountHolderName = selectedClient?.clientName || ""; // or from formData if editable
+    const ifscCode = bankMaster.ifscCode;
+
+    const payload = {
+      accountHolderName,
+      accountNumber,
+      accountType,
+      nominee,
+      refund,
+      bankMaster: { ifscCode },
+      profile: { profileId }, // REQUIRED
+    };
+
+    // Call backend APIs
+    await saveBankAccount(payload);
+    await addBankAccount(profileId, payload);
+
+    alert("Bank Account added successfully!");
+    navigate("/bank-list", { state: { selectedClient } });
+  } catch (err) {
+    alert(err.response?.data || "Error adding bank account.");
+  } finally {
+    setLoading(false);
+  }
+};
+
 
   // ✅ Fetch list of banks
   useEffect(() => {
@@ -72,49 +139,49 @@ const BankForm = ({ onSave }) => {
   };
 
   // ✅ Submit form
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
 
-    if (!selectedClient?.panId) {
-      alert("⚠️ Client PAN ID is required.");
-      return;
-    }
-    if (!formData.bankMaster.ifscCode) {
-      alert("⚠️ Please select a bank (IFSC code).");
-      return;
-    }
-    if (!formData.accountNumber.trim()) {
-      alert("⚠️ Account Number is required.");
-      return;
-    }
+  //   if (!selectedClient?.panId) {
+  //     alert("⚠️ Client PAN ID is required.");
+  //     return;
+  //   }
+  //   if (!formData.bankMaster.ifscCode) {
+  //     alert("⚠️ Please select a bank (IFSC code).");
+  //     return;
+  //   }
+  //   if (!formData.accountNumber.trim()) {
+  //     alert("⚠️ Account Number is required.");
+  //     return;
+  //   }
 
-    setLoading(true);
+  //   setLoading(true);
 
-    try {
-      const payload = {
-        ...formData,
-        client: { panId: selectedClient.panId },
-        bankMaster: { ifscCode: formData.bankMaster.ifscCode },
-      };
+  //   try {
+  //     const payload = {
+  //       ...formData,
+  //       client: { panId: selectedClient.panId },
+  //       bankMaster: { ifscCode: formData.bankMaster.ifscCode },
+  //     };
 
-      const res = await saveBankAccount(payload);
-      console.log("✅ Bank Account Saved:", res.data);
-      alert("✅ Bank Account saved successfully!");
+  //     const res = await saveBankAccount(payload);
+  //     console.log("✅ Bank Account Saved:", res.data);
+  //     alert("✅ Bank Account saved successfully!");
 
-      if (typeof onSave === "function") onSave();
+  //     if (typeof onSave === "function") onSave();
 
-      // Navigate to list after save
-      navigate("/bank-list", { state: { selectedClient } });
-    } catch (err) {
-      console.error("❌ Error saving bank account:", err);
-      alert(
-        err.response?.data ||
-          "An error occurred while saving the bank account."
-      );
-    } finally {
-      setLoading(false);
-    }
-  };
+  //     // Navigate to list after save
+  //     navigate("/bank-list", { state: { selectedClient } });
+  //   } catch (err) {
+  //     console.error("❌ Error saving bank account:", err);
+  //     alert(
+  //       err.response?.data ||
+  //         "An error occurred while saving the bank account."
+  //     );
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
 
   // ✅ Navigate to Bank List
   const handleViewBanks = () => {

@@ -13,69 +13,68 @@ import {
   FormControl,
   InputLabel,
   Select,
-  Avatar,
   Divider,
 } from "@mui/material";
-import "bootstrap/dist/css/bootstrap.min.css";
+import { useNavigate } from "react-router-dom";
 import "./Register.css";
 
-const Register = () => {
-  const [panId, setPanId] = useState("");
-  const [fullName, setFullName] = useState("");
-  const [email, setEmail] = useState("");
-  const [mobile, setMobile] = useState("");
-  const [password, setPassword] = useState("");
-  const [gender, setGender] = useState("");
-  const [role, setRole] = useState("");
-  const [photo, setPhoto] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [popup, setPopup] = useState({ show: false, message: "", type: "" });
+export default function Register() {
+  const navigate = useNavigate();
 
-  // Photo selection
-  const handlePhotoChange = (e) => {
-    setPhoto(e.target.files[0]);
+  const [form, setForm] = useState({
+    //panId: "",
+    fullName: "",
+    email: "",
+    mobileNumber: "",
+    password: "",
+    gender: "",
+    role: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+  const [popup, setPopup] = useState({ show: false, message: "", type: "success" });
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  // Submit JSON
-  const handleRegister = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
 
-    const payload = {
-      panId,
-      fullName,
-      email,
-      mobile,
-      password,
-      gender,
-      role,
-    };
-
     try {
-      const response = await fetch("http://localhost:8080/api/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(payload),
-      });
+      const response = await fetch(
+        "http://localhost:8080/api/users/register", // ✅ CORRECT API
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          credentials: "include", // ✅ safe for session/cookies
+          body: JSON.stringify(form),
+        }
+      );
 
-      const data = await response.json();
+      if (!response.ok) {
+        const errorMsg = await response.text();
+        throw new Error(errorMsg || "Registration failed");
+      }
 
       setPopup({
         show: true,
-        message: "Registration successful!",
+        message: "Registration Successful!",
         type: "success",
       });
-    } catch (error) {
+
+      setTimeout(() => navigate("/login"), 1500);
+
+    } catch (err) {
       setPopup({
         show: true,
-        message: "Registration failed!",
+        message: err.message || "Registration Failed!",
         type: "error",
       });
+    } finally {
+      setLoading(false);
     }
-
-    setLoading(false);
   };
 
   return (
@@ -83,117 +82,66 @@ const Register = () => {
       className="register-bg d-flex align-items-center justify-content-center"
       sx={{ minHeight: "100vh", p: 3 }}
     >
-      <Card
-        sx={{
-          width: "70%",
-          display: "flex",
-          flexDirection: "row",
-          borderRadius: 4,
-          overflow: "hidden",
-          boxShadow: "0 8px 40px rgba(0,0,0,0.3)",
-          backgroundColor: "#fff",
-        }}
-      >
-        {/* LEFT SECTION */}
-        <Box
-          sx={{
-            width: "35%",
-            background:
-              "linear-gradient(180deg, rgba(0,123,255,0.8), rgba(102,16,242,0.8))",
-            color: "white",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-            p: 4,
-          }}
-        >
-          <Button variant="contained" component="label">
-            Upload Profile Photo
-            <input type="file" hidden accept="image/*" onChange={handlePhotoChange} />
-          </Button>
-
-          {photo && (
-            <Avatar
-              src={URL.createObjectURL(photo)}
-              sx={{ width: 80, height: 80, mt: 1 }}
-            />
-          )}
-        </Box>
-
-        {/* RIGHT SECTION */}
-        <CardContent
-          sx={{
-            flex: 1,
-            p: 4,
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-          }}
-        >
-          <Typography variant="h5" sx={{ mb: 2, fontWeight: 600, color: "#333" }}>
+      <Card sx={{ width: "65%", borderRadius: 4, boxShadow: 6 }}>
+        <CardContent sx={{ p: 4 }}>
+          <Typography variant="h5" sx={{ mb: 2, fontWeight: 600 }}>
             Create Your Account
           </Typography>
 
           <Divider sx={{ mb: 3 }} />
 
-          <form onSubmit={handleRegister}>
-            <Box
-              sx={{
-                display: "grid",
-                gridTemplateColumns: "1fr 1fr",
-                gap: 2,
-              }}
-            >
-              {/* PAN */}
+          <form onSubmit={handleSubmit}>
+            <Box sx={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 2 }}>
+              {/*
               <TextField
                 label="PAN ID"
-                value={panId}
-                onChange={(e) => setPanId(e.target.value)}
+                name="panId"
+                value={form.panId}
+                onChange={handleChange}
                 required
               />
-
-              {/* Full Name */}
+            */}
               <TextField
                 label="Full Name"
-                value={fullName}
-                onChange={(e) => setFullName(e.target.value)}
+                name="fullName"
+                value={form.fullName}
+                onChange={handleChange}
                 required
               />
 
-              {/* Email */}
               <TextField
                 label="Email"
+                name="email"
                 type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                value={form.email}
+                onChange={handleChange}
                 required
               />
 
-              {/* Mobile */}
               <TextField
                 label="Mobile Number"
-                value={mobile}
-                onChange={(e) => setMobile(e.target.value)}
+                name="mobileNumber"
+                value={form.mobileNumber}
+                onChange={handleChange}
                 required
               />
 
-              {/* Password */}
               <TextField
                 label="Password"
+                name="password"
                 type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                value={form.password}
+                onChange={handleChange}
                 required
               />
 
-              {/* Gender */}
               <FormControl fullWidth>
                 <InputLabel>Gender</InputLabel>
                 <Select
-                  value={gender}
+                  name="gender"
+                  value={form.gender}
                   label="Gender"
-                  onChange={(e) => setGender(e.target.value)}
+                  onChange={handleChange}
                   required
                 >
                   <MenuItem value="Male">Male</MenuItem>
@@ -202,13 +150,12 @@ const Register = () => {
                 </Select>
               </FormControl>
 
-              {/* Role */}
               <TextField
                 select
                 label="Role"
-                value={role}
-                onChange={(e) => setRole(e.target.value)}
-                fullWidth
+                name="role"
+                value={form.role}
+                onChange={handleChange}
                 required
               >
                 <MenuItem value="ADMIN">Admin</MenuItem>
@@ -220,9 +167,8 @@ const Register = () => {
             <Button
               type="submit"
               variant="contained"
-              color="primary"
               fullWidth
-              sx={{ mt: 3, py: 1.4, fontWeight: "bold", borderRadius: 2 }}
+              sx={{ mt: 3, py: 1.3, fontWeight: "bold" }}
               disabled={loading}
             >
               {loading ? (
@@ -232,32 +178,26 @@ const Register = () => {
               )}
             </Button>
 
-            <Typography variant="body2" align="center" sx={{ mt: 2, color: "#555" }}>
+            <Typography variant="body2" align="center" sx={{ mt: 3 }}>
               Already have an account?{" "}
-              <a href="/admin-login" className="fw-bold text-primary text-decoration-none">
+              <span
+                onClick={() => navigate("/login")}
+                style={{ color: "#1976d2", cursor: "pointer", fontWeight: "bold" }}
+              >
                 Login here
-              </a>
+              </span>
             </Typography>
           </form>
         </CardContent>
       </Card>
 
-      {/* Snackbar */}
       <Snackbar
         open={popup.show}
         autoHideDuration={4000}
         onClose={() => setPopup({ ...popup, show: false })}
       >
-        <Alert
-          severity={popup.type}
-          onClose={() => setPopup({ ...popup, show: false })}
-          sx={{ width: "100%", fontSize: "1rem" }}
-        >
-          {popup.message}
-        </Alert>
+        <Alert severity={popup.type}>{popup.message}</Alert>
       </Snackbar>
     </Box>
   );
-};
-
-export default Register;
+}

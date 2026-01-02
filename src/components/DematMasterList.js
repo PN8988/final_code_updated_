@@ -74,7 +74,7 @@ function DematMasterList() {
                 // <tr key={it.id || idx}>
                  <tr>
   <td>{idx + 1}</td>
-  <td>{it.dpId}</td>
+  <td>{it.dpid}</td>
   <td>{it.loginId}</td>
   <td>{it.depository || "-"}</td>
   <td>{it.brokerName || "-"}</td>
@@ -97,7 +97,6 @@ function DematMasterList() {
     </button>
   </td>
 </tr>
-
               ))
             )}
           </tbody>

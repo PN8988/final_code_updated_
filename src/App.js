@@ -110,6 +110,9 @@ import ImportForm from './components/ImportForm';
 import BankImportLandingPage from './components/BankImportLandingPage';
 import BankService from "./service/BankService";
 import AddressComponent from './components/AddressComponent';
+import DematImportLandingPage from './components/DematImportLandingPage';
+import IncomeCredentialsForm from './components/IncomeCredentialsForm';
+
 
 function App() {
 
@@ -236,6 +239,8 @@ function App() {
 <Route path="/bankimport-form" element={<BankImportLandingPage />} />
 <Route path="/bankimport" element={<BankImport />} />
 <Route path="/update-address" element={<AddressComponent />} />
+<Route path="/dematimport-form"  element={<DematImportLandingPage/>} />
+<Route path="/incomecredential-form"  element={<IncomeCredentialsForm/>} />
 
 {/* <Route path="/asset-list" element={<AssetListForm/>} /> */}
          

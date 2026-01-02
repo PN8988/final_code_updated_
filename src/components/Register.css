@@ -1,136 +1,86 @@
-/* ===== Page Layout ===== */
+/* Page Background */
 .register-container {
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #e8e8e8 0%, #c4c7cc 40%, #303136 100%);
-  padding: 20px;
-  font-family: "Poppins", sans-serif;
+  align-items: center;
+  background: linear-gradient(135deg, #d5d4e2, #242629, #96deeb);
+  background-size: 300% 300%;
+  animation: gradientMove 6s ease infinite;
 }
 
-/* ===== Card Style ===== */
+/* Card */
 .register-card {
-  background-color: #ffffff;
-  width: 380px;
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 400px;
+  padding: 35px;
+  border-radius: 20px;
+  backdrop-filter: blur(16px) saturate(180%);
+  background: rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.8s ease;
 }
 
-.register-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
-}
-
-.register-card h3 {
-  font-weight: 700;
-  color: #222;
+/* Title */
+.title {
   text-align: center;
-  letter-spacing: 0.5px;
+  margin-bottom: 25px;
+  color: #fff;
+  font-size: 28px;
+  font-weight: bold;
 }
 
-/* ===== Input Fields ===== */
-.form-control,
-.form-select {
-  border-radius: 8px;
-  box-shadow: none !important;
-  border: 1px solid #ced4da;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-  font-size: 0.95rem;
-}
-
-.form-control:focus,
-.form-select:focus {
-  border-color: #007bff;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
-  outline: none;
-}
-
-/* ===== Labels ===== */
-.form-label {
-  font-weight: 500;
-  color: #333;
-}
-
-/* ===== Buttons ===== */
-.btn-primary {
-  background-color: #007bff;
-  font-weight: 600;
-  font-size: 1rem;
-  border-radius: 8px;
-  padding: 10px 0;
-  transition: all 0.3s ease;
-  letter-spacing: 0.5px;
-}
-
-.btn-primary:hover {
-  background-color: #0056b3;
-  transform: translateY(-2px);
-}
-
-/* ===== Login Link ===== */
-.text-center a {
-  color: #007bff;
-  font-weight: 500;
-}
-
-.text-center a:hover {
-  text-decoration: underline;
-}
-
-/* ===== Popup Overlay ===== */
-.popup-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
+/* Inputs */
+.input-box {
   width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 2000;
-  animation: fadeInOverlay 0.3s ease-in-out;
+  padding: 12px;
+  margin-bottom: 14px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  background: rgba(255, 255, 255, 0.85);
 }
 
-/* ===== Popup Box ===== */
-.popup-box {
-  background: #fff;
-  width: 360px;
+/* Button */
+.register-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  background: #4f46e5;
+  color: white;
+  font-size: 16px;
+  border: none;
   border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.register-btn:hover {
+  background: #4338ca;
+}
+
+/* Login redirect */
+.login-link {
   text-align: center;
-  padding: 25px 20px;
-  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
-  animation: scaleIn 0.3s ease-in-out;
+  margin-top: 15px;
+  color: #fff;
 }
 
-.popup-box h5 {
-  font-weight: 600;
+.login-link span {
+  color: #ffdd57;
+  cursor: pointer;
+  font-weight: bold;
 }
 
-.popup-box p {
-  color: #555;
-  font-size: 0.95rem;
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-/* ===== Animations ===== */
-@keyframes fadeInOverlay {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes scaleIn {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
