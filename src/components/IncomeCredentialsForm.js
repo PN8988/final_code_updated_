@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 import {
   Box,
   Card,
@@ -15,7 +16,7 @@ import { Visibility, VisibilityOff, Lock, Badge } from "@mui/icons-material";
 
 const panRegex = /^[A-Z]{5}[0-9]{4}[A-Z]{1}$/;
 
-export default function IncomeCredentialsForm({ onSave }) {
+export default function IncomeCredentialsForm({ userId, onSave }) {
   const [form, setForm] = useState({
     incomeId: "",
     password: "",
@@ -46,19 +47,39 @@ export default function IncomeCredentialsForm({ onSave }) {
   };
 
   /* ---------------- SUBMIT ---------------- */
-  const handleSubmit = () => {
-    if (!validate()) return;
+ const handleSubmit = async () => {
+  if (!validate()) return;
 
-    const payload = {
-      incomeId: form.incomeId.toUpperCase(),
-      password: form.password,
-    };
-
-    console.log("Income Credentials:", payload);
-
-    onSave?.(payload);
-    setSnackbar(true);
+  // ✅ Build payload according to backend DTO
+  const payload = {
+    userId: userId, // pass userId from parent
+    incomeCredentialId: form.incomeId,
+    incomeCredentialPassword: form.password,
+    // Optional: kycId if updating existing KYC, else backend will create a new KYC
+    // kycId: existingKycId || undefined
   };
+
+  try {
+    const response = await axios.post(
+      "http://localhost:8080/api/income-credentials/save",
+      payload
+    );
+
+    // ✅ Show success snackbar
+    setSnackbar(true);
+
+    // Optional: call parent callback with response
+    if (onSave) onSave(response.data);
+
+    // ✅ Clear form after save
+    setForm({ incomeId: "", password: "" });
+
+  } catch (err) {
+    // ⚠️ Show proper error from backend
+    const msg = err.response?.data?.message || "Something went wrong";
+    alert(msg);
+  }
+};
 
   /* ---------------- UI ---------------- */
   return (
@@ -100,9 +121,7 @@ export default function IncomeCredentialsForm({ onSave }) {
             label="Password"
             type={showPassword ? "text" : "password"}
             value={form.password}
-            onChange={(e) =>
-              setForm({ ...form, password: e.target.value })
-            }
+            onChange={(e) => setForm({ ...form, password: e.target.value })}
             error={!!errors.password}
             helperText={errors.password}
             margin="normal"
